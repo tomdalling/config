@@ -1,5 +1,8 @@
+CONFIG_BASE="$HOME/config"
+source "$CONFIG_BASE/_lib/bash_common.sh"
+
 # include bashrc
-[[ -r ~/.bashrc ]] && source ~/.bashrc
+source_if_exists ~/.bashrc
 
 # environment vars
 export EDITOR='vim'
@@ -11,6 +14,9 @@ alias ls='ls -lhF'
 alias g='git'
 alias r='rails'
 
+# bash settings
+set completion-ignore-case On
+
 # completions
 _ssh_complete () {
     local cur=${COMP_WORDS[COMP_CWORD]}
@@ -19,5 +25,12 @@ _ssh_complete () {
 }
 complete -F _ssh_complete ssh
 
+# MacPorts Bash shell command completion
+source_if_exists /opt/local/etc/profile.d/bash_completion.sh
+
+# plugin-type things
+source "$CONFIG_BASE/_lib/git_ps1.sh"
+
 # include .bash_profile.local if exists
-[[ -r ~/.bash_profile.local ]] && source ~/.bash_profile.local
+source_if_exists ~/.bash_profile.local
+
