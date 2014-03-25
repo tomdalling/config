@@ -1,0 +1,33 @@
+[user]
+    name = Tom Dalling
+    email = tom@tomdalling.com
+[alias]
+    s = status -uall -s
+    aa = !git add -A . && git s
+    c = commit
+    d = diff
+    dc = diff --cached
+    f = fetch
+    p = push
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    fixws = !"\
+        if (! git diff-files --quiet .) && \
+           (! git diff-index --quiet --cached HEAD) ; then \
+            git commit -m FIXWS_SAVE_INDEX && \
+            git stash save FIXWS_SAVE_TREE && \
+            git rebase --whitespace=fix HEAD~ && \
+            git reset --soft HEAD~ && \
+            git stash pop ; \
+        elif (! git diff-index --quiet --cached HEAD) ; then \
+            git commit -m FIXWS_SAVE_INDEX && \
+            git rebase --whitespace=fix HEAD~ && \
+            git reset --soft HEAD~ ; \
+        fi"
+[core]
+    excludesfile = ~/config/gitignore_global
+[color]
+    ui = true
+[branch]
+    autosetuprebase = always
+[push]
+    default = simple

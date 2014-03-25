@@ -14,10 +14,10 @@ alias r='rails'
 # completions
 _ssh_complete () {
     local cur=${COMP_WORDS[COMP_CWORD]}
-    local hosts="$(grep "Host " ~/.ssh/config | cut -d " " -f 2 | xargs)"
+    local hosts="$(grep "^Host" ~/.ssh/config | awk '{print $2}' | xargs)"
     COMPREPLY=( $(compgen -W "$hosts" -- $cur) )
 }
 complete -F _ssh_complete ssh
 
 # include .bash_profile.local if exists
-[[ -r ~/.bash_profile.local ]] source ~/.bash_profile.local
+[[ -r ~/.bash_profile.local ]] && source ~/.bash_profile.local
