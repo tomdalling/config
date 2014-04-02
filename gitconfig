@@ -5,6 +5,7 @@
     s = status -uall -s
     aa = !git add -A . && git s
     c = commit
+    ca = commit --amend
     d = diff
     dc = diff --cached
     f = fetch
