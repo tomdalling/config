@@ -2,11 +2,11 @@
     name = Tom Dalling
     email = tom@tomdalling.com
 [alias]
-    s = status -uall -s
+    s = status -uall -s --ignore-submodules=dirty
     aa = !git add -A . && git s
     c = commit
     ca = commit --amend
-    d = diff
+    d = diff --ignore-submodules=dirty
     dc = diff --cached
     f = fetch
     p = push
