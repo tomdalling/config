@@ -13,6 +13,12 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 alias ls='ls -lhF'
 alias g='git'
 alias r='rails'
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+mkpushd() {
+    mkdir -p "$1" && pushd "$1"
+}
 
 # bash settings
 set completion-ignore-case On
