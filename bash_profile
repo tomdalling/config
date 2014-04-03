@@ -26,10 +26,15 @@ set completion-ignore-case On
 # completions
 _ssh_complete () {
     local cur=${COMP_WORDS[COMP_CWORD]}
-    local hosts="$(grep "^Host" ~/.ssh/config | awk '{print $2}' | xargs)"
-    COMPREPLY=( $(compgen -W "$hosts" -- $cur) )
+    local prev=${COMP_WORDS[COMP_CWORD-1]}
+    if [[ $COMP_CWORD -eq 1 ]] ; then
+        local hosts="$(grep "^Host" ~/.ssh/config | awk '{print $2}' | xargs)"
+        COMPREPLY=( $(compgen -W "$hosts" -- $cur) )
+    else
+        COMPREPLY=()
+    fi
 }
-complete -F _ssh_complete ssh
+complete -o default -F _ssh_complete ssh
 
 # MacPorts Bash shell command completion
 source_if_exists /opt/local/etc/profile.d/bash_completion.sh
