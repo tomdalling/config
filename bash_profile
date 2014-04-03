@@ -9,6 +9,8 @@ export EDITOR='vim'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+stty -ixon # allows ctrl+s to pass through to vim
+
 # aliases
 alias ls='ls -lhF'
 alias g='git'
