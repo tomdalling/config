@@ -41,6 +41,3 @@ source_if_exists /opt/local/etc/profile.d/bash_completion.sh
 # plugin-type things
 source "$CONFIG_BASE/_lib/git_ps1.sh"
 
-# include .bash_profile.local if exists
-source_if_exists ~/.bash_profile.local
-
