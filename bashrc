@@ -5,8 +5,12 @@ source "$CONFIG_BASE/_lib/bash_common.sh"
 export EDITOR='vim'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+export GREP_OPTIONS="--color"
 
+# bash settings
+set completion-ignore-case On
 stty -ixon # allows ctrl+s to pass through to vim
+shopt -s histappend #append instead of replace history
 
 # aliases
 alias ls='ls -lhF'
@@ -18,9 +22,6 @@ mkcd() {
 mkpushd() {
     mkdir -p "$1" && pushd "$1"
 }
-
-# bash settings
-set completion-ignore-case On
 
 # completions
 _ssh_complete () {
