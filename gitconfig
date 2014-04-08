@@ -4,6 +4,7 @@
 [alias]
     s = status -uall -s --ignore-submodules=dirty
     aa = !git add -A . && git s
+    aac = !git add -A . && git commit
     c = commit
     ca = commit --amend
     d = diff --ignore-submodules=dirty
