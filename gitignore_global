@@ -2,3 +2,6 @@
 *.swp
 tags
 !tags/
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
