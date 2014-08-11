@@ -1,6 +1,6 @@
 [user]
     name = Tom Dalling
-    email = tom@tomdalling.com
+    email = "tom"@"tomdalling"."com"
 [alias]
     s = status -uall -s -b --ignore-submodules=dirty
     a = add
