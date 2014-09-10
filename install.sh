@@ -28,7 +28,7 @@ replace_with_sym() {
 }
 
 cd "$(dirname "$0")"
-[[ "$(pwd)" == "$HOME/config" ]] || fail "Must be install in $HOME/config"
+[[ "$(pwd)" == "$HOME/config" ]] || fail "Must be installed in $HOME/config"
 
 echo "Updating to latest version..."
 git fetch && git rebase
@@ -40,5 +40,7 @@ replace_with_sym bashrc
 replace_with_sym irbrc
 replace_with_sym gitconfig
 replace_with_sym gemrc
+replace_with_sym vimrc
+replace_with_sym vim
 
 echo "Done"
