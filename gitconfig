@@ -3,6 +3,7 @@
     email = "tom"@"tomdalling"."com"
 [alias]
     s = status -uall -s -b --ignore-submodules=dirty
+    co = checkout
     a = add
     aa = !git add -A . && git s
     aac = !git add -A . && git commit
