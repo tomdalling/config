@@ -149,7 +149,7 @@ endfunction
 
 function! MyRunTestFile(path)
     if a:path =~ '_spec\.rb$'
-        execute '!clear && rspec "' . a:path . '"'
+        execute '!clear && bundle exec rspec "' . a:path . '" | less'
         return 1
     else
         return 0
