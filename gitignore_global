@@ -3,10 +3,10 @@
 tags
 !tags/
 
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-*.xcworkspace/*
-!*.xcworkspace/contents.xcworkspacedata
+**/*.xcodeproj/*
+!**/*.xcodeproj/project.pbxproj
+**/*.xcworkspace/*
+!**/*.xcworkspace/contents.xcworkspacedata
 *.xcuserstate
 
 .sass-cache/
