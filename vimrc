@@ -69,10 +69,7 @@ set wildignore=*.log
 set viminfo='20,<0,h
 
 " filetype associations
-" *.rabl, *.cap => ruby
-au BufRead,BufNewFile *.rabl set filetype=ruby
-au BufRead,BufNewFile *.cap set filetype=ruby
-au BufRead,BufNewFile *.podspec set filetype=ruby
+au BufRead,BufNewFile *.rabl,*.thor,*.cap,*.podspec,Podfile set filetype=ruby
 
 " window sizes
 set noequalalways eadirection=both " dont automatically make windows equal sizes
