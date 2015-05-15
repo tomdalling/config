@@ -19,6 +19,27 @@ if has("gui_macvim") || $TERM_PROGRAM == "iTerm.app"
     set guifont=Menlo\ Regular:h15
 endif
 
+" nicer rainbow paren colors for solarized
+let g:rbpt_colorpairs = [
+  \ [ '4',  '#268bd2'],
+  \ [ '6',  '#2aa198'],
+  \ [ '2',  '#859900'],
+  \ [ '3',  '#b58900'],
+  \ [ '9',  '#cb4b16'],
+  \ [ '1',  '#dc322f'],
+  \ [ '5',  '#d33682'],
+  \ [ '13', '#6c71c4'],
+  \ ]
+
+" Enable rainbow parentheses for all buffers
+augroup rainbow_parentheses
+  au!
+  au VimEnter * RainbowParenthesesActivate
+  au BufEnter * RainbowParenthesesLoadRound
+  au BufEnter * RainbowParenthesesLoadSquare
+  au BufEnter * RainbowParenthesesLoadBraces
+augroup END
+
 " fix some security issues by disabling modelines
 set modelines=0
 
