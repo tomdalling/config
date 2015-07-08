@@ -89,6 +89,9 @@ set wildignore=*.log
 " - do not remember hilighted search matches
 set viminfo='20,<0,h
 
+" automatically reload files modified outside of vim
+set autoread
+
 " filetype associations
 au BufRead,BufNewFile *.rabl,*.thor,*.cap,*.podspec,Podfile set filetype=ruby
 
