@@ -6,6 +6,7 @@ export EDITOR='vim'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export GREP_OPTIONS="--color"
+export PAGER="less -r" # -r allows ansi coloring
 
 # bash settings
 set completion-ignore-case On
@@ -16,12 +17,7 @@ shopt -s histappend #append instead of replace history
 alias ls='ls -lhF'
 alias g='git'
 alias r='rails'
-mkcd() {
-    mkdir -p "$1" && cd "$1"
-}
-mkpushd() {
-    mkdir -p "$1" && pushd "$1"
-}
+alias ri='ri -f ansi'
 
 # completions
 _ssh_complete () {
