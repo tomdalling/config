@@ -92,6 +92,9 @@ set viminfo='20,<0,h
 " automatically reload files modified outside of vim
 set autoread
 
+" dont insert spaces when joining lines
+set nojoinspaces
+
 " filetype associations
 au BufRead,BufNewFile *.rabl,*.thor,*.cap,*.podspec,Podfile set filetype=ruby
 au BufRead,BufNewFile *.md,*.markdown set filetype=markdown
