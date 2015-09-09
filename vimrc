@@ -81,6 +81,7 @@ set undolevels=1000
 set ignorecase " search is case insensitive if all lower case, but...
 set smartcase " case sensitive search if search text contains any uppercase chars
 set gdefault " apply substitutions globally by default (equivalent of "/g" on the end of regex)
+set hlsearch " highlight all matches for the search (press space to get rid of the highlights)
 set wildignore=*.log
 
 " sets
@@ -202,6 +203,7 @@ nnoremap / /\v|" use PCRE regex syntax
 nnoremap Q @q|" play q macro
 nnoremap <PageDown> j0zz|" scroll down with cursor centered
 nnoremap <PageUp> k0zz|" scroll up with cursor centered
+nnoremap <space> :nohlsearch<cr>|" remove search highlighting
 
 vnoremap / /\v|" use PCRE regex syntax
 vnoremap <silent> <c-s> <c-c>:update<cr>|" save
