@@ -16,8 +16,10 @@ shopt -s histappend #append instead of replace history
 # aliases
 alias ls='ls -lhF'
 alias g='git'
+alias gs='git s'
 alias r='rails'
 alias ri='ri -f ansi'
+alias be='bundle exec'
 
 # completions
 _ssh_complete () {
