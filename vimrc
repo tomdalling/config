@@ -7,6 +7,7 @@ set nocompatible
 
 " leader is comma
 let mapleader = ","
+let maplocalleader = ","
 
 " syntax highlighting on
 syntax on
@@ -117,79 +118,6 @@ command! Wq wq
 command! W w
 command! Q q
 
-function! s:MyVimgrep(pattern)
-    " remember where we started from in mark F
-    update
-    execute "normal! mF"
-
-    let pattern = empty(a:pattern) ? expand("<cword>") : a:pattern
-    if empty(pattern)
-        echoerr "No word under cursor, and no pattern supplied"
-    else
-        noautocmd silent! execute "vimgrep +\\C" . pattern . "+j ./**/*"
-        copen "open list of results
-        wincmd k "go back up to original window searched from
-        cc "go to first result
-    endif
-endfunction
-command! -nargs=? Search call s:MyVimgrep(<q-args>)
-
-function! MyGoNext()
-    update
-    if empty(getqflist())
-        "ctags
-        tnext
-    else
-        "quickfix
-        cnext
-    endif
-endfunction
-
-function! MyGoPrev()
-    update
-    if empty(getqflist())
-        "ctags
-        tprevious
-    else
-        "quickfix
-        cprevious
-    endif
-endfunction
-
-function! MyGoBack()
-    update
-    if empty(getqflist())
-        "quicktags
-        pop
-    else
-        "quickfix
-        cclose
-        call setqflist([])
-        execute "normal! `F"
-    endif
-endfunction
-
-function! MyRunTestFile(path)
-    if a:path =~ '_spec\.rb$'
-        execute '!clear && bundle exec rspec "' . a:path . '" | less'
-        return 1
-    else
-        return 0
-    endif
-endfunction
-
-function! MyRunTests()
-    update
-    let currentFile = expand('%')
-    if MyRunTestFile(currentFile)
-        let g:my_last_run_test_path = currentFile
-    elseif exists('g:my_last_run_test_path')
-        call MyRunTestFile(g:my_last_run_test_path)
-    else
-        echoerr "Don't know how to run test: " . currentFile
-    endif
-endfunction
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -215,8 +143,6 @@ cnoremap %% <c-r>=expand('%:h').'/'<cr>|" directory of current file
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " leader c-c-c-combos
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>p ]pV`]|" paste, indent and visually select lines
-nnoremap <leader>P [PV`]|" paste, indent and visually select lines
 nnoremap <leader><Up> :wincmd k<cr>|" move between windows the leader and arrow keys
 nnoremap <leader><Down> :wincmd j<cr>|" move between windows the leader and arrow keys
 nnoremap <leader><Left> :wincmd h<cr>|" move between windows the leader and arrow keys
@@ -226,11 +152,8 @@ nnoremap <leader><leader> <c-^>|" last edited file
 nnoremap <leader>m :CtrlPMRU<cr>|" open file from list of previously opened
 nnoremap <leader>/ :CtrlPTag<cr>|" open file based on ctags
 nnoremap <leader>d <c-]>|" ctags go to definition
-nnoremap <leader>n :call MyGoNext()<cr>
-nnoremap <leader>N :call MyGoPrev()<cr>
-nnoremap <leader>b :call MyGoBack()<cr>
-nnoremap <leader>tt :call MyRunTests()<cr>
 
+" TODO: move all of these into ftplugin
 " clojure
 autocmd FileType clojure nmap <leader>cd   <Plug>FireplaceK|"           [c]lojure show [d]ocumentation
 autocmd FileType clojure nmap <leader>cs   <Plug>FireplaceSource|"      [c]lojure show [s]ourcecode
