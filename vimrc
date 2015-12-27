@@ -96,10 +96,6 @@ set autoread
 " dont insert spaces when joining lines
 set nojoinspaces
 
-" filetype associations
-au BufRead,BufNewFile *.rabl,*.thor,*.cap,*.podspec,Podfile set filetype=ruby
-au BufRead,BufNewFile *.md,*.markdown set filetype=markdown
-
 " window sizes
 set noequalalways eadirection=both " dont automatically make windows equal sizes
 set winwidth=100 " desired minimum width
