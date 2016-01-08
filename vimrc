@@ -106,7 +106,9 @@ set winheight=999 " desired minimum height
 set splitright
 set splitbelow
 
-let g:ctrlp_use_caching = 0
+" ctrlp
+let g:ctrlp_use_caching = 0 " don't cache the file list
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " ignore everything in .gitignore
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " custom commands
