@@ -21,7 +21,7 @@ replace_with_sym() {
     fi 
 
     # remove it if it exists
-    rm -f "$dest"
+    rm -Rf "$dest"
 
     #symlink to config file
     ln -s "config/$src" "$dest"
