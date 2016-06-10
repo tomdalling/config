@@ -57,6 +57,9 @@ set nowrap
 " use dumb auto-indenting
 set autoindent
 
+" don't let cursor scroll completely to the top or bottom
+set scrolloff=10
+
 " visual aids
 set showmode " show current mode (e.g. "-- INSERT --" or "-- VISUAL --")
 set showcmd " show extra info along with mode (e.g. number of lines visually selected)
