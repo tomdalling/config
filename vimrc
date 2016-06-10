@@ -157,6 +157,10 @@ nnoremap <leader><leader> <c-^>|" last edited file
 nnoremap <leader>m :CtrlPMRU<cr>|" open file from list of previously opened
 nnoremap <leader>/ :CtrlPTag<cr>|" open file based on ctags
 nnoremap <leader>d <c-]>|" ctags go to definition
+nnoremap <leader>tt :TestLast<cr>
+nnoremap <leader>tn :TestNearest<cr>
+nnoremap <leader>tf :TestFile<cr>
+nnoremap <leader>ta :TestSuite<cr>
 
 " TODO: move all of these into ftplugin
 " clojure
