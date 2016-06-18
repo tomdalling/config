@@ -103,11 +103,10 @@ set autoread
 set nojoinspaces
 
 " window sizes
-set noequalalways eadirection=both " dont automatically make windows equal sizes
 set winwidth=100 " desired minimum width
-set winheight=7
+set winminwidth=20
+set winheight=30 " desired minimum height
 set winminheight=7
-set winheight=999 " desired minimum height
 set splitright
 set splitbelow
 
