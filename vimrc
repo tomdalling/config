@@ -64,9 +64,11 @@ set scrolloff=10
 set showmode " show current mode (e.g. "-- INSERT --" or "-- VISUAL --")
 set showcmd " show extra info along with mode (e.g. number of lines visually selected)
 set cursorline " highligh line of text that cursor is currently in
+set colorcolumn=81 " vertical guide line after 80 chars
 set ruler " show current line number, column number
 set number " show line numbers
 set relativenumber " also show distances to other lines
+set laststatus=2 " makes vim-ariline plugin appear
 
 " sane backspacing behaviour
 set backspace=indent,eol,start
