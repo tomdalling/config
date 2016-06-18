@@ -1,7 +1,7 @@
 .DS_Store
 *.swp
-tags
-!tags/
+.tags
+!.tags/
 
 **/*.xcodeproj/*
 !**/*.xcodeproj/project.pbxproj

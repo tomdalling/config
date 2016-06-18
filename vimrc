@@ -114,6 +114,9 @@ set splitbelow
 let g:ctrlp_use_caching = 0 " don't cache the file list
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " ignore everything in .gitignore
 
+" set the name of the ctags file to search
+set tags=.tags
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " custom commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -157,7 +160,8 @@ nnoremap <leader>. :CtrlP<cr>|" fuzzy file search
 nnoremap <leader><leader> <c-^>|" last edited file
 nnoremap <leader>m :CtrlPMRU<cr>|" open file from list of previously opened
 nnoremap <leader>/ :CtrlPTag<cr>|" open file based on ctags
-nnoremap <leader>d <c-]>|" ctags go to definition
+nnoremap <leader>d g<c-]>|" go to definition with ctags
+nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf.tags --exclude=.git<cr>
 nnoremap <leader>tt :TestLast<cr>
 nnoremap <leader>tn :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>
