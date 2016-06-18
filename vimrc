@@ -106,7 +106,7 @@ set nojoinspaces
 set winwidth=100 " desired minimum width
 set winminwidth=20
 set winheight=30 " desired minimum height
-set winminheight=7
+silent! set winminheight=7
 set splitright
 set splitbelow
 
