@@ -83,12 +83,13 @@ set undodir=$HOME/config/vim/undo/
 set undolevels=1000
 
 " search options
-" use PCRE regex syntax instead of whatever vim normally uses
 set ignorecase " search is case insensitive if all lower case, but...
 set smartcase " case sensitive search if search text contains any uppercase chars
 set gdefault " apply substitutions globally by default (equivalent of "/g" on the end of regex)
 set hlsearch " highlight all matches for the search (press space to get rid of the highlights)
 set wildignore=*.log
+let g:incsearch#auto_nohlsearch = 1 " auto run :nohlsearch
+let g:incsearch#magic = '\v' " PCRE-compitable regexes by default
 
 " sets
 " - max remembered files to 20
@@ -130,15 +131,19 @@ command! Q q
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" replace default search mappings with incsearch plugin
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 nnoremap U <c-r>|" redo
 nnoremap <silent> <c-s> :update<cr>|" save
-nnoremap / /\v|" use PCRE regex syntax
 nnoremap Q @q|" play q macro
 nnoremap <PageDown> j0zz|" scroll down with cursor centered
 nnoremap <PageUp> k0zz|" scroll up with cursor centered
 nnoremap <space> :nohlsearch<cr>|" remove search highlighting
 
-vnoremap / /\v|" use PCRE regex syntax
 vnoremap <silent> <c-s> <c-c>:update<cr>|" save
 
 inoremap <silent> <c-s> <c-o>:update<cr>|" save
