@@ -1,5 +1,6 @@
 CONFIG_BASE="$HOME/config"
 source "$CONFIG_BASE/_lib/bash_common.sh"
+source "$CONFIG_BASE/_lib/cdp.sh"
 
 # environment vars
 export EDITOR='vim'
