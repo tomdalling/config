@@ -1,6 +1,13 @@
 cdp() {
     local NAME="$1"
-    local PROJ_DIR="$(cdp_FindProjectDirectories "$NAME" | head -n 1)"
+    local PROJ_DIR=""
+
+    if [[ -z "$NAME" ]] ; then
+        PROJ_DIR="$HOME/proj"
+    else
+        PROJ_DIR="$(cdp_FindProjectDirectories "$NAME" | head -n 1)"
+    fi
+
     if [[ ! -z "$PROJ_DIR" ]] ; then
         echo "cd $PROJ_DIR"
         cd "$PROJ_DIR"
