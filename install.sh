@@ -18,7 +18,7 @@ replace_with_sym() {
         # append it with a ".local" extension
         cat "$dest" >> "$dest.local"
         echo "    Moved ~/.$src to ~/.${src}.local"
-    fi 
+    fi
 
     # remove it if it exists
     rm -Rf "$dest"
@@ -41,6 +41,7 @@ replace_with_sym irbrc
 replace_with_sym gitconfig
 replace_with_sym gemrc
 replace_with_sym vimrc
+replace_with_sym pryrc
 replace_with_sym vim
 
 echo "Done"
