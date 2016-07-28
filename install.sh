@@ -30,11 +30,6 @@ replace_with_sym() {
 cd "$(dirname "$0")"
 [[ "$(pwd)" == "$HOME/config" ]] || fail "Must be installed in $HOME/config"
 
-echo "Updating to latest version..."
-git fetch && git rebase
-echo
-echo
-
 replace_with_sym bash_profile
 replace_with_sym bashrc
 replace_with_sym irbrc
