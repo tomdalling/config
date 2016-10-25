@@ -37,6 +37,7 @@ replace_with_sym gitconfig
 replace_with_sym gemrc
 replace_with_sym vimrc
 replace_with_sym pryrc
+replace_with_sym byebugrc
 replace_with_sym vim
 
 echo "Done"
