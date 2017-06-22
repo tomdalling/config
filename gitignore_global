@@ -10,3 +10,4 @@
 *.xcuserstate
 
 .sass-cache/
+.byebug_history
