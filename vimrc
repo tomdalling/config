@@ -191,3 +191,9 @@ autocmd FileType clojure nmap <leader>cebb <Plug>FireplaceCountPrint|"   ^
 autocmd FileType clojure nmap <leader>cebr <Plug>FireplaceCountFilter|" [c]lojure [e]valuate around [b]rackets (parens) and [r]eplace
 autocmd FileType clojure nmap <leader>cet  <Plug>FireplacePrompt|"      [c]lojure [e]valuate [t]ext typed in at prompt
 autocmd FileType clojure nmap <leader>cr   :Require!<cr>|"              [c]lojure [r]eload namespace in REPL
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autorun project-local .vimrc files
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set exrc
+set secure
