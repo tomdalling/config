@@ -169,16 +169,19 @@ nnoremap <leader><Up> :wincmd k<cr>|" move between windows the leader and arrow 
 nnoremap <leader><Down> :wincmd j<cr>|" move between windows the leader and arrow keys
 nnoremap <leader><Left> :wincmd h<cr>|" move between windows the leader and arrow keys
 nnoremap <leader><Right> :wincmd l<cr>|" move between windows the leader and arrow keys
+
 nnoremap <leader>. :CtrlP<cr>|" fuzzy file search
 nnoremap <leader><leader> <c-^>|" last edited file
 nnoremap <leader>m :CtrlPMRU<cr>|" open file from list of previously opened
 nnoremap <leader>/ :CtrlPTag<cr>|" open file based on ctags
-nnoremap <leader>d g<c-]>|" go to definition with ctags
-nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf.tags --exclude=.git<cr>
+
 nnoremap <leader>tt :TestLast<cr>
 nnoremap <leader>tn :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>
 nnoremap <leader>ta :TestSuite<cr>
+
+nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf.tags --exclude=.git<cr>
+nnoremap <leader>gd g<c-]>|" [g]o to [d]efinition (with ctags)
 
 " TODO: move all of these into ftplugin
 " clojure
