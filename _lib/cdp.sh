@@ -19,7 +19,7 @@ cdp() {
 cdp_FindProjectDirectories() {
     local NAME="$1"
     find -L ~/proj -depth 1 -maxdepth 1 -type d -iname "$NAME"
-    find -L ~/proj/_super -depth 1 -maxdepth 1 -type d -iname "$NAME"
+    #find -L ~/proj/_super -depth 1 -maxdepth 1 -type d -iname "$NAME"
 }
 
 cdp_AllProjectNames() {
