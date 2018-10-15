@@ -1,7 +1,5 @@
 .DS_Store
 *.swp
-.tags
-!.tags/
 
 **/*.xcodeproj/*
 !**/*.xcodeproj/project.pbxproj
@@ -10,6 +8,11 @@
 *.xcuserstate
 
 .sass-cache/
-.byebug_history
 
 .rspec_status
+spec/examples.txt
+.byebug_history
+.ackrc
+.powrc
+.tags
+!.tags/
