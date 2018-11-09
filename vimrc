@@ -95,7 +95,8 @@ let g:incsearch#magic = '\v' " PCRE-compitable regexes by default
 " - max remembered files to 20
 " - do not save registers
 " - do not remember hilighted search matches
-set viminfo='20,<0,h
+" - remember file marks
+set viminfo='20,<0,h,f1
 
 " automatically reload files modified outside of vim
 set autoread
