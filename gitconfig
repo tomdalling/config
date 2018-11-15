@@ -13,7 +13,9 @@
     dc = diff --cached
     f = fetch
     fr = !git fetch && git rebase
-    fro = !git fetch origin master && git rebase origin/master
+    from = !git fetch origin master && git rebase origin/master
+    ri = rebase -i
+    riom = rebase -i origin/master
     p = push
     pf = push --force-with-lease
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
