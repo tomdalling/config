@@ -34,6 +34,7 @@
         fi"
 [core]
     excludesfile = ~/config/gitignore_global
+    pager = less --chop-long-lines
 [color]
     ui = true
 [branch]
