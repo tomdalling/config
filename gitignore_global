@@ -16,3 +16,4 @@ spec/examples.txt
 .powrc
 .tags
 !.tags/
+.vimrc
