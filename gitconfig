@@ -43,6 +43,8 @@
     default = current
 [checkout]
     defaultRemote = origin
+[commit]
+    verbose = true
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
