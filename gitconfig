@@ -41,6 +41,8 @@
     autosetuprebase = always
 [push]
     default = current
+[checkout]
+    defaultRemote = origin
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
