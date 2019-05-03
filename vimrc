@@ -87,7 +87,7 @@ set ignorecase " search is case insensitive if all lower case, but...
 set smartcase " case sensitive search if search text contains any uppercase chars
 set gdefault " apply substitutions globally by default (equivalent of "/g" on the end of regex)
 set hlsearch " highlight all matches for the search (press space to get rid of the highlights)
-set wildignore=*.log
+set wildignore=*.log,*.png,*.jpg,*.svg
 set incsearch " highlight text as im typing
 let g:incsearch#auto_nohlsearch = 1 " auto run :nohlsearch
 let g:incsearch#magic = '\v' " PCRE-compitable regexes by default
