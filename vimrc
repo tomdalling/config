@@ -91,6 +91,7 @@ set wildignore=*.log,*.png,*.jpg,*.svg
 set incsearch " highlight text as im typing
 let g:incsearch#auto_nohlsearch = 1 " auto run :nohlsearch
 let g:incsearch#magic = '\v' " PCRE-compitable regexes by default
+cnoreabbrev Ack Ack!
 
 " sets
 " - max remembered files to 20
@@ -181,6 +182,8 @@ nnoremap <leader>tt :TestLast<cr>
 nnoremap <leader>tn :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>
 nnoremap <leader>ta :TestSuite<cr>
+
+nnoremap <leader>a :Ack!<cr>
 
 nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf.tags --exclude=.git<cr>
 nnoremap <leader>gd g<c-]>|" [g]o to [d]efinition (with ctags)
