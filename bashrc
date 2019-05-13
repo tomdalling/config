@@ -40,7 +40,7 @@ complete -o default -F _ssh_complete ssh
 source_if_exists /opt/local/etc/profile.d/bash_completion.sh
 
 # plugin-type things
-source "$CONFIG_BASE/_lib/git_ps1.sh"
 source "$CONFIG_BASE/_lib/brew_bash_completion.sh"
+source "$CONFIG_BASE/_lib/git_ps1.sh"
 
 source_if_exists "$HOME/.bashrc.local"
