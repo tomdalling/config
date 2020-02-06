@@ -165,6 +165,7 @@ inoremap <left> <nop>|" disable arrow keys
 inoremap <right> <nop>|" disable arrow keys
 
 cnoremap %% <c-r>=expand('%:h').'/'<cr>|" directory of current file
+cnoremap <C-A> <Home>|" ctrl-a jumps to start of command line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " leader c-c-c-combos
