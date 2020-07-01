@@ -21,6 +21,7 @@ Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-endwise'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
+Plug 'vim-test/vim-test'
 " trialing this as a replacement for supertab
 Plug 'ajh17/VimCompletesMe'
 
@@ -142,7 +143,13 @@ nnoremap <leader>. :FZF!<cr>|" fuzzy file search
 nnoremap <leader>m :call fzf#run(fzf#wrap({
   \ 'source': v:oldfiles,
   \ 'options': '--no-sort' }))<cr>|" open file from list of previously opened
+
 nnoremap <leader>a :Rg<cr>|" search using word under cursor
+
+nnoremap <leader>tt :TestLast<cr>
+nnoremap <leader>tn :TestNearest<cr>
+nnoremap <leader>tf :TestFile<cr>
+nnoremap <leader>ta :TestSuite<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autorun project-local .vimrc files
