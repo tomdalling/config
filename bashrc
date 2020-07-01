@@ -4,11 +4,12 @@ source "$CONFIG_BASE/_lib/cdp.sh"
 source "$CONFIG_BASE/_lib/chruby.sh"
 
 # environment vars
-export EDITOR='vim'
+export EDITOR='nvim'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export GREP_OPTIONS="--color"
 export PAGER="less -r" # -r allows ansi coloring
+export XDG_CONFIG_HOME="$CONFIG_BASE"
 
 # bash settings
 set completion-ignore-case On
@@ -22,6 +23,9 @@ alias gs='git s'
 alias r='rails'
 alias ri='ri -f ansi'
 alias be='bundle exec'
+if [ -x "$(command -v nvim)" ]; then
+  alias vim='nvim'
+fi
 
 # completions
 _ssh_complete () {
