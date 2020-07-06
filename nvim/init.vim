@@ -17,6 +17,7 @@ Plug 'ajh17/VimCompletesMe' " trialing this as a replacement for supertab
 Plug 'haya14busa/is.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'overcache/NeoSolarized'
 Plug 'stefandtw/quickfix-reflector.vim'
@@ -108,6 +109,9 @@ set splitbelow
 " would be nice to restrict this to just the terminal.
 set mouse=a
 
+" show preview in FZF
+let g:fzf_preview_window = 'right:50%'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,10 +155,8 @@ let mapleader = ","
 let maplocalleader = ","
 
 nnoremap <leader><leader> <c-^>|" last edited file
-nnoremap <leader>. :FZF!<cr>|" fuzzy file search
-nnoremap <leader>m :call fzf#run(fzf#wrap({
-  \ 'source': v:oldfiles,
-  \ 'options': '--no-sort' }))<cr>|" open file from list of previously opened
+nnoremap <leader>. :Files<cr>|" fuzzy file search
+nnoremap <leader>m :History<cr>|" open file from list of previously opened
 
 nnoremap <leader>a :Rg<cr>|" search using word under cursor
 
