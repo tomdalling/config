@@ -104,6 +104,10 @@ set winminheight=7
 set splitright
 set splitbelow
 
+" Enable mouse everywhere. Terminal won't scroll unless I do this, but it
+" would be nice to restrict this to just the terminal.
+set mouse=a
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
