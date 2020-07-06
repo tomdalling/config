@@ -12,15 +12,17 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 
-Plug 'overcache/NeoSolarized'
-Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'jremmen/vim-ripgrep'
+Plug 'overcache/NeoSolarized'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-endwise'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'vim-test/vim-test'
 " trialing this as a replacement for supertab
 Plug 'ajh17/VimCompletesMe'
@@ -32,14 +34,13 @@ call plug#end()
 " general
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" no line wrapping
-set nowrap
-
 " color scheme
 set termguicolors
 set background=dark
 let g:neosolarized_contrast = "high"
 colorscheme NeoSolarized
+let g:airline_solarized_bg='dark'
+let g:airline_theme='solarized'
 
 " tabs are two spaces
 set tabstop=2
@@ -47,6 +48,12 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set smarttab
+
+" no line wrapping
+set nowrap
+
+" use dumb auto-indenting
+set autoindent
 
 " start scrolling before cursor reaches top or bottom line
 set scrolloff=10
