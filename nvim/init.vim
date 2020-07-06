@@ -134,7 +134,7 @@ inoremap <right> <nop>|" disable arrow keys
 cnoremap %% <c-r>=expand('%:h').'/'<cr>|" directory of current file
 cnoremap <C-A> <Home>|" ctrl-a jumps to start of command line
 
-tnoremap <Esc> <C-\><C-n>|" escape exits terminal insert mode
+tnoremap <Esc> <C-\><C-n>:q!<cr>|" escape exits terminals
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " custom commands
