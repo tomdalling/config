@@ -120,6 +120,7 @@ nnoremap <S-Down> :wincmd j<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Left> :wincmd h<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Right> :wincmd l<cr>|" move between windows with shift + arrow keys
 nnoremap <c-]> g<c-]>|" better tag jumping
+nnoremap gQ <nop>|" disable entering Ex mode (im hitting this accidentally)
 
 inoremap <up> <nop>|" disable arrow keys
 inoremap <down> <nop>|" disable arrow keys
