@@ -13,8 +13,8 @@
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'ajh17/VimCompletesMe' " trialing this as a replacement for supertab
+Plug 'haya14busa/is.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ntpeters/vim-better-whitespace'
@@ -23,9 +23,9 @@ Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-test/vim-test'
-" trialing this as a replacement for supertab
-Plug 'ajh17/VimCompletesMe'
 
 call plug#end()
 
