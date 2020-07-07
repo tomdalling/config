@@ -20,6 +20,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'overcache/NeoSolarized'
+Plug 'pbogut/fzf-mru.vim'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -109,8 +110,10 @@ set splitbelow
 " would be nice to restrict this to just the terminal.
 set mouse=a
 
-" show preview in FZF
-let g:fzf_preview_window = 'right:50%'
+" FZF settings
+let g:fzf_preview_window='right:50%' "always show preview on right
+let g:fzf_mru_relative = 1 "only show recent files from current dir
+let g:fzf_mru_no_sort = 1 "always sort recent files by access date, not name
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
@@ -156,7 +159,7 @@ let maplocalleader = ","
 
 nnoremap <leader><leader> <c-^>|" last edited file
 nnoremap <leader>. :Files<cr>|" fuzzy file search
-nnoremap <leader>m :History<cr>|" open file from list of previously opened
+nnoremap <leader>m :FZFMru<cr>|" open file from list of previously opened
 
 nnoremap <leader>a :Rg<cr>|" search using word under cursor
 
