@@ -137,7 +137,12 @@ inoremap <right> <nop>|" disable arrow keys
 cnoremap %% <c-r>=expand('%:h').'/'<cr>|" directory of current file
 cnoremap <C-A> <Home>|" ctrl-a jumps to start of command line
 
-tnoremap <Esc> <C-\><C-n>:q!<cr>|" escape exits terminals
+tnoremap <ScrollWheelUp> <C-\><C-n><ScrollWheelUp>|" scroll wheel exits terminal mode
+tnoremap <ScrollWheelDown> <C-\><C-n><ScrollWheelDown>|" scroll wheel exits terminal mode
+tnoremap <S-Up> <C-\><C-n>:wincmd k<cr>|" move between windows with shift + arrow keys
+tnoremap <S-Down> <C-\><C-n>:wincmd j<cr>|" move between windows with shift + arrow keys
+tnoremap <S-Left> <C-\><C-n>:wincmd h<cr>|" move between windows with shift + arrow keys
+tnoremap <S-Right> <C-\><C-n>:wincmd l<cr>|" move between windows with shift + arrow keys
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " custom commands
