@@ -26,6 +26,8 @@ alias be='bundle exec'
 if [ -x "$(command -v nvim)" ]; then
   alias vim='nvim'
 fi
+alias journal='memex run journal'
+alias zettle='memex run zettle'
 
 # completions
 _ssh_complete () {
