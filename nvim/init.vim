@@ -115,6 +115,9 @@ let g:fzf_preview_window='right:50%' "always show preview on right
 let g:fzf_mru_relative = 1 "only show recent files from current dir
 let g:fzf_mru_no_sort = 1 "always sort recent files by access date, not name
 
+" make escape key in terminal
+set ttimeoutlen=5
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
