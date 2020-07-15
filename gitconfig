@@ -41,6 +41,7 @@
     autosetuprebase = always
 [push]
     default = current
+    followTags = true
 [checkout]
     defaultRemote = origin
 [commit]
