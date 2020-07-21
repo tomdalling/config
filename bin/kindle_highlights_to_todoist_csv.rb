@@ -99,7 +99,7 @@ class Command < Dry::CLI::Command
     end
 
     def trunc(str)
-      max_len = 60
+      max_len = 90
       elip = "\u2026"
       if str.length > max_len
         str.slice(0, max_len - elip.length) + elip
