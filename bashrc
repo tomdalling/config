@@ -27,7 +27,7 @@ if [ -x "$(command -v nvim)" ]; then
   alias vim='nvim'
 fi
 alias journal='memex run journal'
-alias zettle='memex run zettle'
+alias zettel='memex run zettel'
 
 # completions
 _ssh_complete () {
