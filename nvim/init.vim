@@ -1,7 +1,5 @@
 " TODO:
-"  - vim-test
 "  - vim-ruby
-"  - maybe is.vim or incsearch.vim
 "  - dowl-dabooks
 "  - utilisnips?
 "  - CoC.vim for code completion?
