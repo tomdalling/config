@@ -3,7 +3,6 @@
 "  - dowl-dabooks
 "  - utilisnips?
 "  - CoC.vim for code completion?
-"  - vim-markdown?
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugins
@@ -19,6 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'overcache/NeoSolarized'
 Plug 'pbogut/fzf-mru.vim'
+Plug 'plasticboy/vim-markdown'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -115,6 +115,13 @@ let g:fzf_mru_no_sort = 1 "always sort recent files by access date, not name
 
 " make escape key in terminal
 set ttimeoutlen=5
+
+" markdown
+let g:vim_markdown_frontmatter = 1 | " syntax highlight markdown YAML frontmatter
+let g:vim_markdown_folding_disabled = 1 | " don't fold by default
+autocmd FileType markdown setlocal spelllang=en_au | " use en_au dictionary
+autocmd FileType markdown setlocal complete+=kspell | " dictionary autocompletion
+autocmd FileType markdown setlocal conceallevel=2 | " conceal markdown styling syntax
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
