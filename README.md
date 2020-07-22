@@ -6,9 +6,17 @@ Because it's always different on every single machine I use.
 
     git clone git@github.com:tomdalling/config.git ~/config
     cd ~/config
+    ./install.sh
+
+Neovim plugins:
+
+    nvim
+    :PlugInstall
+
+Old vim plugins:
+
     git submodule init
     git submodule update
-    ./install.sh
 
 ## Adding Vim Plugin Submodules
 
