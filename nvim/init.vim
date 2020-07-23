@@ -123,6 +123,9 @@ autocmd FileType markdown setlocal spelllang=en_au | " use en_au dictionary
 autocmd FileType markdown setlocal complete+=kspell | " dictionary autocompletion
 autocmd FileType markdown setlocal conceallevel=2 | " conceal markdown styling syntax
 
+" test.vim
+let test#custom_runners = {'Ruby': ['TestBench']}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
