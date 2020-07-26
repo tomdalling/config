@@ -10,6 +10,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export GREP_OPTIONS="--color"
 export PAGER="less -r" # -r allows ansi coloring
 export XDG_CONFIG_HOME="$CONFIG_BASE"
+export FZF_DEFAULT_COMMAND="rg --files" # respects .gitignore
 
 # bash settings
 set completion-ignore-case On
