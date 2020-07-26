@@ -27,6 +27,7 @@ alias be='bundle exec'
 if [ -x "$(command -v nvim)" ]; then
   alias vim='nvim'
 fi
+alias cdm='memex mount && cd /Volumes/Memex'
 alias journal='memex run journal'
 alias zettel='memex run zettel'
 
