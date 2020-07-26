@@ -26,6 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-test/vim-test'
+Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 
