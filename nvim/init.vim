@@ -120,9 +120,13 @@ set ttimeoutlen=5
 " markdown
 let g:vim_markdown_frontmatter = 1 | " syntax highlight markdown YAML frontmatter
 let g:vim_markdown_folding_disabled = 1 | " don't fold by default
+let g:vim_markdown_conceal_code_blocks = 0 | " don't hide code fences (```)
+let g:vim_markdown_autowrite = 1 | " save current file when following link
+let g:vim_markdown_new_list_item_indent = 0 | " disable weird indenting behaviour
 autocmd FileType markdown setlocal spelllang=en_au | " use en_au dictionary
 autocmd FileType markdown setlocal complete+=kspell | " dictionary autocompletion
 autocmd FileType markdown setlocal conceallevel=2 | " conceal markdown styling syntax
+autocmd FileType markdown nmap <C-]> <Plug>Markdown_EditUrlUnderCursor | " open linked file
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
