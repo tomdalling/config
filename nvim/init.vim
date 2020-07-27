@@ -93,9 +93,6 @@ set gdefault " apply substitutions globally by default (equivalent of "/g" on th
 set hlsearch " highlight all matches for the search (press space to get rid of the highlights)
 set incsearch " highlight text as im typing
 set inccommand=nosplit " show replacements while typing
-" not using incsearch.vim atm. might use is.vim instead.
-"let g:incsearch#auto_nohlsearch = 1 " auto run :nohlsearch
-"let g:incsearch#magic = '\v' " PCRE-compitable regexes by default
 
 " window sizing/splitting
 set winwidth=100 " desired minimum width
@@ -143,6 +140,7 @@ nnoremap <c-]> g<c-]>|" better tag jumping
 nnoremap gQ <nop>|" disable entering Ex mode (im hitting this accidentally)
 nnoremap <expr> <Up> &wrap == 'wrap' ? 'k' : 'gk' |" arrows move on "visual" lines when wrapping is on
 nnoremap <expr> <Down> &wrap == 'wrap' ? 'j' : 'gj' |" arrows move on "visual" lines when wrapping is on
+nnoremap / /\v|" start search with 'very magic' turned on
 
 inoremap <up> <nop>|" disable arrow keys
 inoremap <down> <nop>|" disable arrow keys
