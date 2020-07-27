@@ -124,22 +124,12 @@ let g:fzf_mru_no_sort = 1 "always sort recent files by access date, not name
 " make escape key in terminal
 set ttimeoutlen=5
 
-" markdown
+" markdown (see also: after/ftplugin/markdown.vim)
 let g:vim_markdown_frontmatter = 1 | " syntax highlight markdown YAML frontmatter
 let g:vim_markdown_folding_disabled = 1 | " don't fold by default
 let g:vim_markdown_conceal_code_blocks = 0 | " don't hide code fences (```)
 let g:vim_markdown_autowrite = 1 | " save current file when following link
 let g:vim_markdown_new_list_item_indent = 0 | " disable weird indenting behaviour
-augroup MyMarkdownConfig
-  autocmd!
-  autocmd FileType markdown setlocal textwidth=80
-  autocmd FileType markdown setlocal nowrap
-  autocmd FileType markdown setlocal spelllang=en_au | " use en_au dictionary
-  autocmd FileType markdown setlocal complete+=kspell | " dictionary autocompletion
-  autocmd FileType markdown setlocal conceallevel=2 | " conceal markdown styling syntax
-  autocmd FileType markdown nmap <buffer> <C-]> <Plug>Markdown_EditUrlUnderCursor | " open linked file
-  autocmd FileType markdown nnoremap <buffer> <cr> {gq}k$|" return key autowraps paragraphs
-augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
