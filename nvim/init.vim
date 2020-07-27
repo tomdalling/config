@@ -56,8 +56,9 @@ set nowrap
 " use dumb auto-indenting
 set autoindent
 
-" start scrolling before cursor reaches top or bottom line
+" start scrolling before cursor reaches edge of window
 set scrolloff=10
+set sidescrolloff=20
 
 " visual aids
 set showmode " show current mode (e.g. "-- INSERT --" or "-- VISUAL --")
