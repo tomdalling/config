@@ -135,6 +135,7 @@ augroup MyMarkdownConfig
   autocmd FileType markdown setlocal complete+=kspell | " dictionary autocompletion
   autocmd FileType markdown setlocal conceallevel=2 | " conceal markdown styling syntax
   autocmd FileType markdown nmap <buffer> <C-]> <Plug>Markdown_EditUrlUnderCursor | " open linked file
+  autocmd FileType markdown nnoremap <buffer> <cr> {gq}k$|" return key autowraps paragraphs
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
