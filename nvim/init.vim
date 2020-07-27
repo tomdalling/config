@@ -192,9 +192,3 @@ let mapleader = ","
 let maplocalleader = ","
 
 nnoremap <leader><leader> <c-^>|" last edited file
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autorun project-local .vimrc files
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set exrc
-set secure
