@@ -12,36 +12,58 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe' " trialing this as a replacement for supertab
 Plug 'haya14busa/is.vim'
-Plug 'jremmen/vim-ripgrep'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'overcache/NeoSolarized'
-Plug 'pbogut/fzf-mru.vim'
-Plug 'plasticboy/vim-markdown'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+
+Plug 'vim-test/vim-test'
+  nnoremap <leader>tt :TestLast<cr>
+  nnoremap <leader>tn :TestNearest<cr>
+  nnoremap <leader>tf :TestFile<cr>
+  nnoremap <leader>ta :TestSuite<cr>
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+  let g:fzf_preview_window='right:50%' "always show preview on right
+  nnoremap <leader>. :Files<cr>|" fuzzy file search
+
+Plug 'pbogut/fzf-mru.vim'
+  let g:fzf_mru_relative = 1 "only show recent files from current dir
+  let g:fzf_mru_no_sort = 1 "always sort recent files by access date, not name
+  nnoremap <leader>m :FZFMru<cr>|" open file from list of previously opened
+
+Plug 'jremmen/vim-ripgrep'
+  let g:rg_command = 'rg --vimgrep --smart-case' | " use 'smart case mode' in ripgrep
+  nnoremap <leader>a :Rg<cr>|" search using word under cursor
+
+Plug 'overcache/NeoSolarized'
+  let g:neosolarized_contrast = "high"
+
+Plug 'plasticboy/vim-markdown'
+  let g:vim_markdown_frontmatter = 1 | " syntax highlight markdown YAML frontmatter
+  let g:vim_markdown_folding_disabled = 1 | " don't fold by default
+  let g:vim_markdown_conceal_code_blocks = 0 | " don't hide code fences (```)
+  let g:vim_markdown_autowrite = 1 | " save current file when following link
+  let g:vim_markdown_new_list_item_indent = 0 | " disable weird indenting behaviour
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-test/vim-test'
-Plug 'tpope/vim-unimpaired'
+  let g:airline_theme='solarized'
+  let g:airline_solarized_bg='dark'
 
 call plug#end()
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" general
+" general options
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " color scheme
 set termguicolors
 set background=dark
-let g:neosolarized_contrast = "high"
 colorscheme NeoSolarized
-let g:airline_solarized_bg='dark'
-let g:airline_theme='solarized'
 
 " tabs are two spaces
 set tabstop=2
@@ -72,9 +94,6 @@ set relativenumber " also show distances to other lines
 " dont insert spaces when joining lines
 set nojoinspaces
 
-" use 'smart case mode' in ripgrep
-let g:rg_command = 'rg --vimgrep --smart-case'
-
 " fix potential security issues by disabling modelines
 set modelines=0
 set nomodeline
@@ -103,7 +122,11 @@ set winminheight=7
 set splitright
 set splitbelow
 
-" terminal buffer config
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" terminal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 augroup MyTerminalConfig
   autocmd!
   " immediately enter insert mode when switching to a terminal
@@ -116,23 +139,10 @@ augroup MyTerminalConfig
   au BufLeave term://* setlocal mouse=
 augroup END
 
-" FZF settings
-let g:fzf_preview_window='right:50%' "always show preview on right
-let g:fzf_mru_relative = 1 "only show recent files from current dir
-let g:fzf_mru_no_sort = 1 "always sort recent files by access date, not name
-
-" make escape key work faster in terminal
-set ttimeoutlen=5
-
-" markdown (see also: after/ftplugin/markdown.vim)
-let g:vim_markdown_frontmatter = 1 | " syntax highlight markdown YAML frontmatter
-let g:vim_markdown_folding_disabled = 1 | " don't fold by default
-let g:vim_markdown_conceal_code_blocks = 0 | " don't hide code fences (```)
-let g:vim_markdown_autowrite = 1 | " save current file when following link
-let g:vim_markdown_new_list_item_indent = 0 | " disable weird indenting behaviour
+set ttimeoutlen=5 | " make escape key work faster in terminal
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" mappings
+" global mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap U <c-r>|" redo
@@ -164,7 +174,7 @@ tnoremap <S-Left> <C-\><C-n>:wincmd h<cr>|" move between windows with shift + ar
 tnoremap <S-Right> <C-\><C-n>:wincmd l<cr>|" move between windows with shift + arrow keys
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" custom commands
+" global commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " do what i meant when i accidentally use capitals
@@ -176,21 +186,12 @@ command! E e
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" leader c-c-c-combos
+" global leader combos
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let maplocalleader = ","
 
 nnoremap <leader><leader> <c-^>|" last edited file
-nnoremap <leader>. :Files<cr>|" fuzzy file search
-nnoremap <leader>m :FZFMru<cr>|" open file from list of previously opened
-
-nnoremap <leader>a :Rg<cr>|" search using word under cursor
-
-nnoremap <leader>tt :TestLast<cr>
-nnoremap <leader>tn :TestNearest<cr>
-nnoremap <leader>tf :TestFile<cr>
-nnoremap <leader>ta :TestSuite<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autorun project-local .vimrc files
