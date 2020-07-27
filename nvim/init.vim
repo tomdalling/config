@@ -105,6 +105,9 @@ set splitbelow
 " terminal buffer config
 augroup MyTerminalConfig
   autocmd!
+  " immediately enter insert mode when switching to a terminal
+  au BufEnter term://* startinsert!
+
   " Enable mouse in terminal. It won't scroll unless I do this.
   " `setlocal` doesn't actually work for `mouse` here, because it's a global
   " option, so `mouse` needs to be turned off again when exiting a terminal.
