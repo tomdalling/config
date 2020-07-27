@@ -1,5 +1,4 @@
 " TODO:
-"  - vim-ruby
 "  - dowl-dabooks
 "  - utilisnips?
 "  - CoC.vim for code completion?
@@ -18,6 +17,11 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+Plug 'vim-ruby/vim-ruby'
+  let g:ruby_indent_access_modifier_style = 'indent'
+  let g:ruby_indent_assignment_style = 'variable'
+  let g:ruby_indent_inside_multiline_brackets_style = 'variable'
 
 Plug 'vim-test/vim-test'
   nnoremap <leader>tt :TestLast<cr>
