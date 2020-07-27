@@ -102,9 +102,15 @@ set winminheight=7
 set splitright
 set splitbelow
 
-" Enable mouse everywhere. Terminal won't scroll unless I do this, but it
-" would be nice to restrict this to just the terminal.
-set mouse=a
+" terminal buffer config
+augroup MyTerminalConfig
+  autocmd!
+  " Enable mouse in terminal. It won't scroll unless I do this.
+  " `setlocal` doesn't actually work for `mouse` here, because it's a global
+  " option, so `mouse` needs to be turned off again when exiting a terminal.
+  au BufEnter term://* setlocal mouse=a
+  au BufLeave term://* setlocal mouse=
+augroup END
 
 " FZF settings
 let g:fzf_preview_window='right:50%' "always show preview on right
