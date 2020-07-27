@@ -132,6 +132,8 @@ let g:vim_markdown_autowrite = 1 | " save current file when following link
 let g:vim_markdown_new_list_item_indent = 0 | " disable weird indenting behaviour
 augroup MyMarkdownConfig
   autocmd!
+  autocmd FileType markdown setlocal textwidth=80
+  autocmd FileType markdown setlocal nowrap
   autocmd FileType markdown setlocal spelllang=en_au | " use en_au dictionary
   autocmd FileType markdown setlocal complete+=kspell | " dictionary autocompletion
   autocmd FileType markdown setlocal conceallevel=2 | " conceal markdown styling syntax
