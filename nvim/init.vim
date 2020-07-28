@@ -4,6 +4,12 @@
 "  - CoC.vim for code completion?
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" leader keys (these need to be set before any mappings)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = ","
+let maplocalleader = ","
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
@@ -192,7 +198,4 @@ command! E e
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global leader combos
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = ","
-let maplocalleader = ","
-
 nnoremap <leader><leader> <c-^>|" last edited file
