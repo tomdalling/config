@@ -8,4 +8,4 @@ setlocal complete+=kspell | " dictionary autocompletion
 setlocal conceallevel=2 | " conceal markdown styling syntax
 
 nmap     <buffer> <C-]> <Plug>Markdown_EditUrlUnderCursor | " open linked file
-nnoremap <buffer> <cr> {gq}k$|" return key autowraps paragraphs
+nnoremap <buffer> <cr> {gq}$ge$|" return key autowraps paragraphs
