@@ -220,6 +220,8 @@ command! W w
 command! Q q
 command! E e
 
+" delete and close current file
+command! Rm call delete(expand('%')) | bdelete!
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global leader combos
