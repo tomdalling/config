@@ -153,6 +153,11 @@ set winminheight=7
 set splitright
 set splitbelow
 
+" folding
+set foldmethod=manual " no auto-folding by default
+set foldlevelstart=2 " unfold two layers by default, when opening a file
+set foldminlines=6 " don't fold small things
+set foldopen=hor,insert,jump,mark,percent,quickfix,search,tag,undo " things that auto-open a fold
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terminal
@@ -179,6 +184,7 @@ set ttimeoutlen=5 | " make escape key work faster in terminal
 nnoremap U <c-r>|" redo
 nnoremap Q @q|" play q macro
 nnoremap <space> :nohlsearch<cr>|" remove search highlighting
+nnoremap <cr> zazt|" toggle current fold and move window to view it
 nnoremap <S-Up> :wincmd k<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Down> :wincmd j<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Left> :wincmd h<cr>|" move between windows with shift + arrow keys
