@@ -103,7 +103,7 @@ set autoindent
 
 " start scrolling before cursor reaches edge of window
 set scrolloff=10
-set sidescrolloff=20
+set sidescrolloff=5
 
 " visual aids
 set showmode " show current mode (e.g. "-- INSERT --" or "-- VISUAL --")
