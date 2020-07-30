@@ -16,13 +16,26 @@ call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe' " trialing this as a replacement for supertab
-Plug 'haya14busa/is.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+Plug 'haya14busa/incsearch.vim'
+  let g:incsearch#auto_nohlsearch = 1 " text movements do nohlsearch
+  let g:incsearch#magic = '\v' " make all regexes 'very magic' by default
+  let g:incsearch#consistent_n_direction = 1 " make n and N work the same for / and ?
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
+  map n  <Plug>(incsearch-nohl-n)zv|" zv because this ignores foldopen
+  map N  <Plug>(incsearch-nohl-N)zv|" zv because this ignores foldopen
+  map *  <Plug>(incsearch-nohl-*)
+  map #  <Plug>(incsearch-nohl-#)
+  map g* <Plug>(incsearch-nohl-g*)
+  map g# <Plug>(incsearch-nohl-g#)
 
 Plug 'vim-ruby/vim-ruby'
   let g:ruby_indent_access_modifier_style = 'indent'
@@ -166,7 +179,6 @@ nnoremap <c-]> g<c-]>|" better tag jumping
 nnoremap gQ <nop>|" disable entering Ex mode (im hitting this accidentally)
 nnoremap <expr> <Up> &wrap == 'wrap' ? 'k' : 'gk' |" arrows move on "visual" lines when wrapping is on
 nnoremap <expr> <Down> &wrap == 'wrap' ? 'j' : 'gj' |" arrows move on "visual" lines when wrapping is on
-nnoremap / /\v|" start search with 'very magic' turned on
 
 inoremap <up> <nop>|" disable arrow keys
 inoremap <down> <nop>|" disable arrow keys
