@@ -85,6 +85,9 @@ Plug 'vim-airline/vim-airline-themes'
   let g:airline_theme='solarized'
   let g:airline_solarized_bg='dark'
 
+Plug 'wojtekmach/vim-rename'
+  nnoremap <leader>fr :call feedkeys(":Rename " . expand('%@'))<CR>
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,6 +181,24 @@ augroup END
 set ttimeoutlen=5 | " make escape key work faster in terminal
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! MyDeleteCurrentFile() abort
+  let l:choice = confirm('Delete '.expand('%').'?', "&Yes\n&No", 2)
+  if l:choice == 1
+    delete(expand('%'))
+    bdelete!
+  endif
+endfunction
+
+function! MyAliasCommand(new_cmd, existing_cmd) abort
+  exec 'cnoreabbrev <expr> '.a:new_cmd
+        \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:new_cmd.'")'
+        \ .'? ("'.a:existing_cmd.'") : ("'.a:new_cmd.'"))'
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -220,10 +241,12 @@ command! W w
 command! Q q
 command! E e
 
-" delete and close current file
-command! Rm call delete(expand('%')) | bdelete!
+command! Rm call MyDeleteCurrentFile
+call MyAliasCommand("Mv", "Rename")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global leader combos
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader><leader> <c-^>|" last edited file
+
+nnoremap <leader>fd :call MyDeleteCurrentFile<cr>|" f(ile) d(elete)
