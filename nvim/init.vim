@@ -235,11 +235,11 @@ tnoremap <S-Right> <C-\><C-n>:wincmd l<cr>|" move between windows with shift + a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " do what i meant when i accidentally use capitals
-command! WQ wq
-command! Wq wq
-command! W w
-command! Q q
-command! E e
+call MyAliasCommand("WQ", "wq")
+call MyAliasCommand("Wq", "wq")
+call MyAliasCommand("W", "w")
+call MyAliasCommand("Q", "q")
+call MyAliasCommand("E", "e")
 
 command! Rm call MyDeleteCurrentFile
 call MyAliasCommand("Mv", "Rename")
