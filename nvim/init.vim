@@ -14,7 +14,6 @@ let maplocalleader = ","
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'
 Plug 'ajh17/VimCompletesMe' " trialing this as a replacement for supertab
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'stefandtw/quickfix-reflector.vim'
@@ -22,6 +21,15 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+Plug 'airblade/vim-gitgutter'
+  let g:gitgutter_map_keys = 0 | " define mappings myself
+  nmap ]h <Plug>(GitGutterNextHunk)
+  nmap [h <Plug>(GitGutterPrevHunk)
+  nmap <leader>ha :GitGutterQuickFix<cr>:copen<cr>:wincmd p<cr>:cfirst<cr>|" (h)unk (a)ll
+  nmap <leader>hh <Plug>(GitGutterStageHunk)|" (h)unk add/stage
+  nmap <leader>hc <Plug>(GitGutterUndoHunk)|" (h)unk (c)heckout -- undoes hunk changes
+  set updatetime=100 | " milliseconds before updating the gutter (also affects swap file writing)
 
 Plug 'haya14busa/incsearch.vim'
   let g:incsearch#auto_nohlsearch = 1 " text movements do nohlsearch
