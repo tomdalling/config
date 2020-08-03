@@ -49,7 +49,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'vim-ruby/vim-ruby'
   let g:ruby_indent_access_modifier_style = 'indent'
   let g:ruby_indent_assignment_style = 'variable'
-  let g:ruby_indent_inside_multiline_brackets_style = 'variable'
+  let g:ruby_indent_hanging_elements = 0
   let ruby_fold = 1
   let ruby_foldable_groups = 'def class module << __END__'
   let ruby_spellcheck_strings = 1
