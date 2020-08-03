@@ -143,6 +143,16 @@ set noswapfile
 set undofile
 set undolevels=1000
 
+" automatically reload files modified outside of vim
+" see: https://github.com/neovim/neovim/issues/2127
+set autoread
+augroup MyChecktime
+  autocmd!
+  if !has("gui_running")
+    autocmd BufEnter,FocusGained,BufEnter,FocusLost,WinLeave * checktime
+  endif
+augroup END
+
 " search options
 set ignorecase " search is case insensitive if all lower case, but...
 set smartcase " case sensitive search if search text contains any uppercase chars
@@ -169,7 +179,7 @@ set foldopen=hor,insert,jump,mark,percent,quickfix,search,tag,undo " things that
 " terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-augroup MyTerminalConfig
+augroup MyTerminal
   autocmd!
   " immediately enter insert mode when switching to a terminal
   au BufEnter term://* startinsert!
