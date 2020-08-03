@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter'
   nmap <leader>ha :GitGutterQuickFix<cr>:copen<cr>:wincmd p<cr>:cfirst<cr>|" (h)unk (a)ll
   nmap <leader>hh <Plug>(GitGutterStageHunk)|" (h)unk add/stage
   nmap <leader>hc <Plug>(GitGutterUndoHunk)|" (h)unk (c)heckout -- undoes hunk changes
+  nmap <leader>hp <Plug>(GitGutterPreviewHunk)|" (h)unk (p)review
   set updatetime=100 | " milliseconds before updating the gutter (also affects swap file writing)
 
 Plug 'haya14busa/incsearch.vim'
