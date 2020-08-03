@@ -213,10 +213,52 @@ function! MyAliasCommand(new_cmd, existing_cmd) abort
         \ .'? ("'.a:existing_cmd.'") : ("'.a:new_cmd.'"))'
 endfunction
 
+function! MySystemPasteboardYank(type, delete_afterwards) abort
+  " make selection
+  if a:type ==# 'line'
+    silent exec 'normal! `[V`]'
+  elseif a:type ==# 'char'
+    silent exec 'normal! `[v`]'
+  else
+    echom 'Unhandled movement type: ' . a:type
+    return
+  endif
+
+  if a:delete_afterwards
+    " delete into * register
+    normal! "*d
+  else
+    " yank into * register
+    normal! "*y
+  end
+endfunction
+
+function! MySystemCutOpfunc(type) abort
+  call MySystemPasteboardYank(a:type, 1)
+endfunction
+
+function! MySystemCopyOpfunc(type) abort
+  call MySystemPasteboardYank(a:type, 0)
+endfunction
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" global commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" do what i meant when i accidentally use capitals
+call MyAliasCommand("WQ", "wq")
+call MyAliasCommand("Wq", "wq")
+call MyAliasCommand("W", "w")
+call MyAliasCommand("Q", "q")
+call MyAliasCommand("E", "e")
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" normal mode
 nnoremap U <c-r>|" redo
 nnoremap Q @q|" play q macro
 nnoremap <space> :nohlsearch<cr>|" remove search highlighting
@@ -230,14 +272,17 @@ nnoremap gQ <nop>|" disable entering Ex mode (im hitting this accidentally)
 nnoremap <expr> <Up> &wrap == 'wrap' ? 'k' : 'gk' |" arrows move on "visual" lines when wrapping is on
 nnoremap <expr> <Down> &wrap == 'wrap' ? 'j' : 'gj' |" arrows move on "visual" lines when wrapping is on
 
+" insert mode
 inoremap <up> <nop>|" disable arrow keys
 inoremap <down> <nop>|" disable arrow keys
 inoremap <left> <nop>|" disable arrow keys
 inoremap <right> <nop>|" disable arrow keys
 
+" command line mode
 cnoremap %% <c-r>=expand('%:h').'/'<cr>|" directory of current file
 cnoremap <C-A> <Home>|" ctrl-a jumps to start of command line
 
+" terminal mode
 tnoremap <ScrollWheelUp> <C-\><C-n><ScrollWheelUp>|" scroll wheel exits terminal mode
 tnoremap <ScrollWheelDown> <C-\><C-n><ScrollWheelDown>|" scroll wheel exits terminal mode
 tnoremap <S-Up> <C-\><C-n>:wincmd k<cr>|" move between windows with shift + arrow keys
@@ -246,19 +291,21 @@ tnoremap <S-Left> <C-\><C-n>:wincmd h<cr>|" move between windows with shift + ar
 tnoremap <S-Right> <C-\><C-n>:wincmd l<cr>|" move between windows with shift + arrow keys
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" global commands
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" do what i meant when i accidentally use capitals
-call MyAliasCommand("WQ", "wq")
-call MyAliasCommand("Wq", "wq")
-call MyAliasCommand("W", "w")
-call MyAliasCommand("Q", "q")
-call MyAliasCommand("E", "e")
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global leader combos
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader><leader> <c-^>|" last edited file
 
+" normal mode
+nnoremap <leader><leader> <c-^>|" last edited file
 nnoremap <leader>fd :call MyDeleteCurrentFile()<cr>|" f(ile) d(elete)
+nnoremap <silent> <leader>c :set opfunc=MySystemCopyOpfunc<CR>g@|" copy to system clipboard (with movement)
+nnoremap <silent> <leader>y :set opfunc=MySystemCopyOpfunc<CR>g@|" yank (copy) to system clipboard (with movement)
+nnoremap <silent> <leader>x :set opfunc=MySystemCutOpfunc<CR>g@|" cut to system clipboard (with movement)
+nnoremap <leader>p "*p|" paste from system clipboard
+nnoremap <leader>P "*P|" paste from system clipboard
+
+" visual mode
+vnoremap <leader>c "*y|" copy to system pasteboard
+vnoremap <leader>y "*y|" yank (copy) to system pasteboard
+vnoremap <leader>x "*d|" cuts into system pasteboard
+vnoremap <leader>v d"*p|" pastes over selection with system pasteboard
+
