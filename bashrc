@@ -30,6 +30,7 @@ fi
 alias cdm='memex mount && cd /Volumes/Memex'
 alias journal='memex run journal'
 alias zettel='memex run zettel'
+alias wiki='memex run wiki'
 
 # completions
 _ssh_complete () {
