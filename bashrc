@@ -44,3 +44,4 @@ source "$CONFIG_BASE/_lib/brew_bash_completion.sh"
 source "$CONFIG_BASE/_lib/git_ps1.sh"
 
 source_if_exists "$HOME/.bashrc.local"
+source_if_exists "$HOME/.fzf.bash" # fzf dumps config here on install
