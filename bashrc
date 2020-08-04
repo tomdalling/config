@@ -15,7 +15,13 @@ export FZF_DEFAULT_COMMAND="rg --files" # respects .gitignore
 # bash settings
 set completion-ignore-case On
 stty -ixon # allows ctrl+s to pass through to vim
-shopt -s histappend #append instead of replace history
+shopt -s histappend # append instead of replace history
+shopt -s cmdhist # one line per command in history
+export HISTFILESIZE=1000000 # bigger history file
+export HISTSIZE=1000000 # bigger history file
+export HISTCONTROL=ignoreboth # ignore duplicate commands, and commands starting with a space
+export HISTIGNORE='ls:bg:fg:history' # do not store these commands in history
+export PROMPT_COMMAND='history -a' # save history immediately (don't wait for shell exit)
 
 # aliases
 alias ls='ls -lhF'
