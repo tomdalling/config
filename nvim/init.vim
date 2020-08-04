@@ -83,7 +83,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'overcache/NeoSolarized'
   let g:neosolarized_contrast = "high"
 
-Plug 'plasticboy/vim-markdown'
+Plug 'tomdalling/vim-markdown'
   let g:vim_markdown_frontmatter = 1 | " syntax highlight markdown YAML frontmatter
   let g:vim_markdown_folding_disabled = 1 | " don't fold by default
   let g:vim_markdown_conceal_code_blocks = 0 | " don't hide code fences (```)
