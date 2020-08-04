@@ -39,22 +39,6 @@ alias zettel='memex run zettel'
 alias wiki='memex run wiki'
 alias vimrc='vim -O ~/config/nvim/init.vim'
 
-# completions
-_ssh_complete () {
-    local cur=${COMP_WORDS[COMP_CWORD]}
-    local prev=${COMP_WORDS[COMP_CWORD-1]}
-    if [[ $COMP_CWORD -eq 1 ]] ; then
-        local hosts="$(grep "^Host" ~/.ssh/config | awk '{print $2}' | xargs)"
-        COMPREPLY=( $(compgen -W "$hosts" -- $cur) )
-    else
-        COMPREPLY=()
-    fi
-}
-complete -o default -F _ssh_complete ssh
-
-# MacPorts Bash shell command completion
-source_if_exists /opt/local/etc/profile.d/bash_completion.sh
-
 # plugin-type things
 source "$CONFIG_BASE/_lib/brew_bash_completion.sh"
 source "$CONFIG_BASE/_lib/git_ps1.sh"
