@@ -31,6 +31,7 @@ alias cdm='memex mount && cd /Volumes/Memex'
 alias journal='memex run journal'
 alias zettel='memex run zettel'
 alias wiki='memex run wiki'
+alias vimrc='vim -O ~/config/nvim/init.vim'
 
 # completions
 _ssh_complete () {
