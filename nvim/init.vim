@@ -274,7 +274,7 @@ call MyAliasCommand("E", "e")
 nnoremap U <c-r>|" redo
 nnoremap Q @q|" play q macro
 nnoremap <space> :nohlsearch<cr>|" remove search highlighting
-nnoremap <cr> zazt|" toggle current fold and move window to view it
+nnoremap <expr> <cr> (foldlevel(line('.')) > 0 ? 'zazt' : '<cr>') " toggle current fold and move window to view it (if fold is found)
 nnoremap <S-Up> :wincmd k<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Down> :wincmd j<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Left> :wincmd h<cr>|" move between windows with shift + arrow keys
