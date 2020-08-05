@@ -180,7 +180,7 @@ set splitright
 set splitbelow
 
 " folding
-set foldmethod=manual " no auto-folding by default
+set foldmethod=marker " no auto-folding by default, unless there are markers in the text itself
 set foldlevelstart=2 " unfold two layers by default, when opening a file
 set foldminlines=6 " don't fold small things
 set foldopen=hor,insert,jump,mark,percent,quickfix,search,tag,undo " things that auto-open a fold
