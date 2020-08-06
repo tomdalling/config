@@ -222,6 +222,16 @@ function! MyDeleteCurrentFile() abort
   endif
 endfunction
 
+function! MyCloseHelp() abort
+  for l:buf in nvim_list_bufs()
+    if getbufvar(l:buf, '&buftype', 'ERROR') ==# 'help' " only help buffers
+      if bufwinnr(l:buf) != -1 " only active (visible) buffers
+        exe 'bdelete' l:buf
+      endif
+    endif
+  endfor
+endfunction
+
 function! MyAliasCommand(new_cmd, existing_cmd) abort
   exec 'cnoreabbrev <expr> '.a:new_cmd
         \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:new_cmd.'")'
@@ -286,6 +296,8 @@ nnoremap <c-]> g<c-]>|" better tag jumping
 nnoremap gQ <nop>|" disable entering Ex mode (im hitting this accidentally)
 nnoremap <expr> <Up> (&wrap == 'wrap' ? 'k' : 'gk') |" arrows move on "visual" lines when wrapping is on
 nnoremap <expr> <Down> (&wrap == 'wrap' ? 'j' : 'gj') |" arrows move on "visual" lines when wrapping is on
+nnoremap <silent> q<down> :cclose<cr>:call MyCloseHelp()<cr>|" close quickfix window and help windows
+nnoremap q<up> :copen<cr>|" open quickfix window
 
 " insert mode
 inoremap <up> <nop>|" disable arrow keys
