@@ -325,7 +325,9 @@ tnoremap <S-Right> <C-\><C-n>:wincmd l<cr>|" move between windows with shift + a
 
 " normal mode
 nnoremap <leader><leader> <c-^>|" last edited file
-nnoremap <leader>fd :call MyDeleteCurrentFile()<cr>|" f(ile) d(elete)
+nnoremap <leader>fd :call MyDeleteCurrentFile()<cr>|" (f)ile (d)elete
+nnoremap <silent> <leader>fw :silent exec '!mkdir -p %:h'<cr>:write<cr>|" (f)ile (w)rite - forces a write, creating directories if needed
+
 nnoremap <silent> <leader>c :set opfunc=MySystemCopyOpfunc<CR>g@|" copy to system clipboard (with movement)
 nnoremap <silent> <leader>y :set opfunc=MySystemCopyOpfunc<CR>g@|" yank (copy) to system clipboard (with movement)
 nnoremap <silent> <leader>x :set opfunc=MySystemCutOpfunc<CR>g@|" cut to system clipboard (with movement)
