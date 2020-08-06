@@ -21,6 +21,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'andymass/vim-matchup'
+Plug 'tomdalling/vim-markdown-extras'
 
 Plug 'airblade/vim-gitgutter'
   let g:gitgutter_map_keys = 0 | " define mappings myself
