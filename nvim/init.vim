@@ -188,6 +188,9 @@ set foldopen=hor,insert,jump,mark,percent,quickfix,search,tag,undo " things that
 " tab completion in commands
 set wildmode=longest,full
 
+" jump to last edit position when opening a file
+autocmd BufReadPost * silent! normal! g`"zv
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
