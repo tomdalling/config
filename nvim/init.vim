@@ -27,6 +27,14 @@ Plug 'tpope/vim-commentary'
 Plug 'tomdalling/vim-markdown-extras'
 " Plug '~/proj/vim-markdown-extras'
 
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
+  let g:lens#disabled_filetypes = ['fzf']
+  let g:lens#height_resize_max = 30 " replaces 'winheight'
+  let g:lens#height_resize_min = 7 " replaces 'winminheight'
+  let g:lens#width_resize_max = 90 " replaces 'winwidth'
+  let g:lens#width_resize_min = 20 " replaces 'winminwidth'
+
 Plug 'airblade/vim-gitgutter'
   let g:gitgutter_map_keys = 0 | " define mappings myself
   nmap ]h <Plug>(GitGutterNextHunk)
@@ -176,11 +184,7 @@ set hlsearch " highlight all matches for the search (press space to get rid of t
 set incsearch " highlight text as im typing
 set inccommand=nosplit " show replacements while typing
 
-" window sizing/splitting
-set winwidth=100 " desired minimum width
-set winminwidth=20
-set winheight=30 " desired minimum height
-set winminheight=7
+" window splitting
 set splitright
 set splitbelow
 
