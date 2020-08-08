@@ -108,11 +108,11 @@ Plug 'vim-airline/vim-airline-themes'
   let g:airline_theme='solarized'
   let g:airline_solarized_bg='dark'
 
-Plug 'wojtekmach/vim-rename'
-  " (f)ile (r)ename
-  nnoremap <leader>fr :call feedkeys(":Rename " . expand('%@'))<CR>
-  " (f)ile (m)ove
-  nnoremap <leader>fm :call feedkeys(":Rename " . expand('%@'))<CR>
+Plug 'tpope/vim-eunuch'
+  nnoremap <leader>fr :call feedkeys(":Rename " . expand('%:t'))<CR>|" (f)ile (r)ename
+  nnoremap <leader>fm :call feedkeys(":Move " . expand('%'))<CR>|" (f)ile (m)ove
+  nnoremap <leader>fd :Delete!<cr>|" (f)ile (d)elete
+  nnoremap <leader>fw :Mkdir!<cr>:write<cr>|" (f)ile (w)rite - forces a write, creating directories if needed
 
 call plug#end()
 
@@ -222,15 +222,6 @@ set ttimeoutlen=5 | " make escape key work faster in terminal
 " functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! MyDeleteCurrentFile() abort
-  let l:path = expand('%')
-  let l:choice = confirm('Delete '.l:path.'?', "&Yes\n&No", 2)
-  if l:choice == 1
-    call delete(l:path)
-    bdelete!
-  endif
-endfunction
-
 function! MyCloseHelp() abort
   for l:buf in nvim_list_bufs()
     if getbufvar(l:buf, '&buftype', 'ERROR') ==# 'help' " only help buffers
@@ -334,8 +325,6 @@ tnoremap <S-Right> <C-\><C-n>:wincmd l<cr>|" move between windows with shift + a
 
 " normal mode
 nnoremap <leader><leader> <c-^>|" last edited file
-nnoremap <leader>fd :call MyDeleteCurrentFile()<cr>|" (f)ile (d)elete
-nnoremap <silent> <leader>fw :silent exec '!mkdir -p %:h'<cr>:write<cr>|" (f)ile (w)rite - forces a write, creating directories if needed
 
 nnoremap <silent> <leader>c :set opfunc=MySystemCopyOpfunc<CR>g@|" copy to system clipboard (with movement)
 nnoremap <silent> <leader>y :set opfunc=MySystemCopyOpfunc<CR>g@|" yank (copy) to system clipboard (with movement)
