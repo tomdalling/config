@@ -22,6 +22,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'andymass/vim-matchup'
+Plug 'tpope/vim-commentary'
 Plug 'tomdalling/vim-markdown-extras'
 
 Plug 'airblade/vim-gitgutter'
