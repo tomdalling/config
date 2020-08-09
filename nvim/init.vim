@@ -279,6 +279,7 @@ endfunction
 " do what i meant when i accidentally use capitals
 call MyAliasCommand("WQ", "wq")
 call MyAliasCommand("Wq", "wq")
+call MyAliasCommand("Xa", "xa")
 call MyAliasCommand("W", "w")
 call MyAliasCommand("Q", "q")
 call MyAliasCommand("E", "e")
