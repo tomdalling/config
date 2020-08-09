@@ -121,6 +121,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
   let g:prosession_dir = '~/config/nvim/prosessions/'
+  " see: plugin/after/obsession.vim
 
 call plug#end()
 
