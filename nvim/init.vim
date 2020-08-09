@@ -23,6 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-vinegar'
 
 Plug 'tomdalling/vim-markdown-extras'
 " Plug '~/proj/vim-markdown-extras'
