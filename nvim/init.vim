@@ -338,8 +338,8 @@ nnoremap <silent> <leader>x :set opfunc=MySystemCutOpfunc<CR>g@|" cut to system 
 nnoremap <leader>p "*p|" paste from system clipboard
 nnoremap <leader>P "*P|" paste from system clipboard
 
-nnoremap <leader>vs :source ~/config/nvim/init.vim<cr>|" (v)imrc (s)ource
-nnoremap <leader>ve :vsplit ~/config/nvim/init.vim<cr>|" (v)imrc (e)dit
+nnoremap <leader>vs :source %<cr>|" (v)im (s)ource current file
+nnoremap <leader>vv :vsplit ~/config/nvim/init.vim<cr>|" (v)im edit (v)imrc
 nnoremap <leader>vi :source ~/config/nvim/init.vim<cr>:PlugInstall<cr>|" (v)imrc (i)nstall plugins
 
 " visual mode
