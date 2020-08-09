@@ -5,10 +5,18 @@ augroup IncludeLastTestInSession
 augroup END
 
 function! s:append_last_test(session_path) abort
-  if !exists('g:test#last_position')
-    return
-  endif
+  let l:globals_to_append = [
+    \ 'test#last_position',
+    \ 'test#last_command',
+    \ 'test#last_strategy',
+    \ ]
 
-  let l:line =  'let g:test#last_position = ' . string(g:test#last_position)
-  call writefile([l:line], a:session_path, 'a')
+  let l:lines = []
+  for l:global in l:globals_to_append
+    if exists('g:' . l:global)
+      call add(l:lines, 'let g:' . l:global . ' = ' . string(get(g:, l:global)))
+    endif
+  endfor
+
+  call writefile(l:lines, a:session_path, 'a')
 endfunction
