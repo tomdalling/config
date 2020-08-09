@@ -1,6 +1,5 @@
 CONFIG_BASE="$HOME/config"
 source "$CONFIG_BASE/_lib/bash_common.sh"
-source "$CONFIG_BASE/_lib/cdp.sh"
 source "$CONFIG_BASE/_lib/chruby.sh"
 
 # environment vars
@@ -22,6 +21,7 @@ export HISTSIZE=1000000 # bigger history file
 export HISTCONTROL=ignoreboth # ignore duplicate commands, and commands starting with a space
 export HISTIGNORE='ls:bg:fg:history' # do not store these commands in history
 export PROMPT_COMMAND='history -a' # save history immediately (don't wait for shell exit)
+export CDPATH=".:~:~/proj:/Volumes" # easy `cd`ing into common directories
 
 # aliases
 alias ls='ls -lhF'
