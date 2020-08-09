@@ -115,6 +115,9 @@ Plug 'tpope/vim-eunuch'
   nnoremap <leader>fd :Delete!<cr>|" (f)ile (d)elete
   nnoremap <leader>fw :Mkdir!<cr>:write<cr>|" (f)ile (w)rite - forces a write, creating directories if needed
 
+Plug 'tpope/vim-abolish'
+  " see: after/plugin/abolish.vim
+
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
   let g:prosession_dir = '~/config/nvim/prosessions/'
