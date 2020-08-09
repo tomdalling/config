@@ -3,4 +3,5 @@ vim/.netrwhist
 nvim/.netrwhist
 nvim/plugged/
 nvim/spell/
+nvim/prosessions/
 bin/memex

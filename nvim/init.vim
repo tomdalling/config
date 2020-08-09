@@ -114,6 +114,10 @@ Plug 'tpope/vim-eunuch'
   nnoremap <leader>fd :Delete!<cr>|" (f)ile (d)elete
   nnoremap <leader>fw :Mkdir!<cr>:write<cr>|" (f)ile (w)rite - forces a write, creating directories if needed
 
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
+  let g:prosession_dir = '~/config/nvim/prosessions/'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -196,9 +200,6 @@ set foldopen=hor,insert,jump,mark,percent,quickfix,search,tag,undo " things that
 
 " tab completion in commands
 set wildmode=longest,full
-
-" jump to last edit position when opening a file
-autocmd BufReadPost * silent! normal! g`"zv
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terminal
