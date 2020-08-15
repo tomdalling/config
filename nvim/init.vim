@@ -15,7 +15,6 @@ let maplocalleader = ","
 call plug#begin()
 
 Plug 'ajh17/VimCompletesMe' " trialing this as a replacement for supertab
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -27,6 +26,9 @@ Plug 'tpope/vim-vinegar'
 
 Plug 'tomdalling/vim-markdown-extras'
 " Plug '~/proj/vim-markdown-extras'
+
+Plug 'ntpeters/vim-better-whitespace'
+  let g:better_whitespace_operator='' " disable <leader>s mapping (I don't use it)
 
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
@@ -332,6 +334,7 @@ tnoremap <S-Right> <C-\><C-n>:wincmd l<cr>|" move between windows with shift + a
 
 " normal mode
 nnoremap <leader><leader> <c-^>|" last edited file
+nnoremap <leader>s 1z=|" correct word to the most-likely spellcheck alternative
 
 nnoremap <silent> <leader>c :set opfunc=MySystemCopyOpfunc<CR>g@|" copy to system clipboard (with movement)
 nnoremap <silent> <leader>y :set opfunc=MySystemCopyOpfunc<CR>g@|" yank (copy) to system clipboard (with movement)
