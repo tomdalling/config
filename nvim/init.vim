@@ -221,6 +221,10 @@ set foldopen=hor,insert,jump,mark,percent,quickfix,search,tag,undo " things that
 " tab completion in commands
 set wildmode=longest,full
 
+" auto-save file before certain commands, like <C-]> for tag jumping, which
+" would otherwise fail due to the file having unsaved changes
+set autowrite
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
