@@ -126,6 +126,12 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
   let g:prosession_dir = '~/config/nvim/prosessions/'
   " see: plugin/after/obsession.vim
+  let g:obsession_include_globals = [
+    \ 'test#last_position',
+    \ 'test#last_command',
+    \ 'test#last_strategy',
+    \ 'test#ruby#testbench#executable',
+    \ ]
 
 call plug#end()
 

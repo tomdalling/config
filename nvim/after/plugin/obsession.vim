@@ -1,18 +1,16 @@
-augroup IncludeLastTestInSession
+augroup IncludeGlobalsInObsession
   autocmd!
   " this event fires after obession.vim overwrites a session file
-  autocmd User Obsession call s:append_last_test(g:this_obsession)
+  autocmd User Obsession call s:append_globals(g:this_obsession)
 augroup END
 
-function! s:append_last_test(session_path) abort
-  let l:globals_to_append = [
-    \ 'test#last_position',
-    \ 'test#last_command',
-    \ 'test#last_strategy',
-    \ ]
+function! s:append_globals(session_path) abort
+  if !exists('g:obsession_include_globals')
+    return
+  endif
 
   let l:lines = []
-  for l:global in l:globals_to_append
+  for l:global in g:obsession_include_globals
     if exists('g:' . l:global)
       call add(l:lines, 'let g:' . l:global . ' = ' . string(get(g:, l:global)))
     endif
