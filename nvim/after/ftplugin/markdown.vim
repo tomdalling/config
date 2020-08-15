@@ -1,5 +1,5 @@
 setlocal nowrap
-setlocal textwidth=80
+setlocal textwidth=70
 setlocal linebreak
 
 setlocal spell
