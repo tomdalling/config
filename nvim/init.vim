@@ -81,6 +81,7 @@ Plug 'vim-test/vim-test'
   nnoremap <leader>tf :TestFile<cr>
   nnoremap <leader>ta :TestSuite<cr>
   nnoremap <leader>tv :TestVisit<cr>
+  let g:test#ruby#testbench#options = '--reverse-backtraces'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
