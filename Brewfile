@@ -30,3 +30,4 @@ mas 'Slack', id: 803453959
 mas 'Pages', id: 409201541
 mas 'Numbers', id: 409203825
 mas 'Keynote', id: 409183694
+mas '1Password', id: 1333542190
