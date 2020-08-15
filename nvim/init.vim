@@ -23,6 +23,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-projectionist'
 
 Plug 'tomdalling/vim-markdown-extras'
 " Plug '~/proj/vim-markdown-extras'
@@ -287,6 +288,12 @@ call MyAliasCommand("Xa", "xa")
 call MyAliasCommand("W", "w")
 call MyAliasCommand("Q", "q")
 call MyAliasCommand("E", "e")
+call MyAliasCommand("Vsp", "vsp")
+call MyAliasCommand("av", "AV") | " vim-projectionist
+call MyAliasCommand("va", "AV") | " vim-projectionist
+call MyAliasCommand("VA", "AV") | " vim-projectionist
+call MyAliasCommand("Va", "AV") | " vim-projectionist
+call MyAliasCommand("a", "A") | " vim-projectionist
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
