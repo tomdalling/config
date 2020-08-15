@@ -138,6 +138,10 @@ Plug 'AndrewRadev/splitjoin.vim'
   let g:splitjoin_ruby_curly_braces = 0
   let g:splitjoin_ruby_hanging_args = 0
 
+Plug 'AndrewRadev/sideways.vim'
+  nnoremap g<left> :SidewaysLeft<cr>
+  nnoremap g<right> :SidewaysRight<cr>
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
