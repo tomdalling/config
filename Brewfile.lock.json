@@ -326,17 +326,45 @@
             }
           }
         }
+      },
+      "ctags": {
+        "version": "5.8_1",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/ctags-5.8_1.catalina.bottle.2.tar.gz",
+              "sha256": "0f9bebdadd76a7ec818b904d6266eae183e869bf6f83302d836b93fc50a03714"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/ctags-5.8_1.mojave.bottle.2.tar.gz",
+              "sha256": "da05bcfc8536c7e627dbea17e67997b45388706ba9bb84e521682c0358cf18b5"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/ctags-5.8_1.high_sierra.bottle.2.tar.gz",
+              "sha256": "169b9d458f2db04d609c86c36e9d9dd4ee2474b7c472a1a11c766454e4bba1a4"
+            }
+          }
+        }
+      },
+      "universal-ctags/universal-ctags/universal-ctags": {
+        "options": {
+          "args": [
+            "HEAD"
+          ]
+        }
       }
     },
     "tap": {
       "homebrew/cask": {
-        "revision": "63f26e9732376a1b30d6ff680d981b0588e38a17"
+        "revision": "0b10cd185edb1918be74727a7369584a9dd76045"
       },
       "heroku/brew": {
         "revision": "73895eaeed3fb0b3cd90d3dfddb8cfe4178084b1"
       },
       "homebrew/bundle": {
-        "revision": "538ffcbd24561213480e6f32a9ec087c91b25862"
+        "revision": "2e75b89fde37b586ddc8ed1c87df21533a50a50e"
       },
       "homebrew/cask-versions": {
         "revision": "1df5da59a20f7d51e17ad2db7ecd9f4186085a4e"
@@ -394,13 +422,14 @@
       "Keynote": {
         "id": "409183694",
         "version": "10.1"
-      }
+      },
+      "1Password": null
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.9",
+        "HOMEBREW_VERSION": "2.4.11",
         "HOMEBREW_PREFIX": "/usr/local",
         "Homebrew/homebrew-core": "7cafa56ab6e2e9fbd9abe88441a7b41a33850a55",
         "CLT": "1103.0.32.29",

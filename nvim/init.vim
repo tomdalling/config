@@ -26,6 +26,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-projectionist'
 
+Plug 'ludovicchabant/vim-gutentags'
+  let g:gutentags_file_list_command = 'rg --files' " uses .gitignore and such
+  let g:gutentags_cache_dir = g:my_config_root . '/nvim/gutentags/'
+
 Plug 'tomdalling/vim-markdown-extras'
 " Plug '~/proj/vim-markdown-extras'
 
