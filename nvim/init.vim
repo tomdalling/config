@@ -2,6 +2,7 @@
 "  - dowl-dabooks
 "  - utilisnips?
 "  - CoC.vim for code completion?
+let g:my_config_root = expand('<sfile>:p:h:h') " usually ~/config
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " leader keys (these need to be set before any mappings)
@@ -124,7 +125,7 @@ Plug 'tpope/vim-abolish'
 
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
-  let g:prosession_dir = '~/config/nvim/prosessions/'
+  let g:prosession_dir = g:my_config_root . '/nvim/prosessions/'
   " see: plugin/after/obsession.vim
   let g:obsession_include_globals = [
     \ 'test#last_position',
@@ -370,8 +371,8 @@ nnoremap <leader>p "*p|" paste from system clipboard
 nnoremap <leader>P "*P|" paste from system clipboard
 
 nnoremap <leader>vs :source %<cr>|" (v)im (s)ource current file
-nnoremap <leader>vv :vsplit ~/config/nvim/init.vim<cr>|" (v)im edit (v)imrc
-nnoremap <leader>vi :source ~/config/nvim/init.vim<cr>:PlugInstall<cr>|" (v)imrc (i)nstall plugins
+nnoremap <leader>vv :exe 'vsplit' g:my_config_root.'/nvim/init.vim'<cr>|" (v)im edit (v)imrc
+nnoremap <leader>vi :exe 'source' g:my_config_root.'/nvim/init.vim'<cr>:PlugInstall<cr>|" (v)imrc (i)nstall plugins
 
 " visual mode
 vnoremap <leader>c "*y|" copy to system pasteboard
