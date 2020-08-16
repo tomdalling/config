@@ -33,10 +33,11 @@ alias be='bundle exec'
 if [ -x "$(command -v nvim)" ]; then
   alias vim='nvim'
 fi
-alias cdm='memex mount && cd /Volumes/Memex'
+alias memex='~/proj/memex/bin/memex'
 alias journal='memex run journal'
 alias zettel='memex run zettel'
 alias wiki='memex run wiki'
+alias todo='memex run todo'
 alias vimrc='vim -O ~/config/nvim/init.vim'
 
 # plugin-type things
