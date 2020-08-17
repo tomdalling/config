@@ -1,5 +1,6 @@
 setlocal nowrap
 setlocal textwidth=70
+setlocal colorcolumn=+1
 setlocal linebreak
 
 setlocal spell

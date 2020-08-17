@@ -180,7 +180,7 @@ set sidescrolloff=5
 set showmode " show current mode (e.g. "-- INSERT --" or "-- VISUAL --")
 set showcmd " show extra info along with mode (e.g. number of lines visually selected)
 set cursorline " highligh line of text that cursor is currently in
-set colorcolumn=+1 " vertical guide, 1 col after text width
+set colorcolumn=81 " vertical guide after 80 columns
 set ruler " show current line number, column number
 set number " show line numbers
 set relativenumber " also show distances to other lines
