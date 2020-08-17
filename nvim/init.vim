@@ -25,6 +25,7 @@ Plug 'andymass/vim-matchup'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-projectionist'
+Plug g:my_config_root.'/vim/bundle/dowl-dabooks'
 
 Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_file_list_command = 'rg --files' " uses .gitignore and such
