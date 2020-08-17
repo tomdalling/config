@@ -301,6 +301,21 @@ function! MySystemCopyOpfunc(type) abort
   call MySystemPasteboardYank(a:type, 0)
 endfunction
 
+function! MyToggleRecordQ() abort
+  if(!exists('g:my_recording_q'))
+    let g:my_recording_q = 0
+  endif
+
+  if g:my_recording_q
+    normal! q
+    echom "Finished recording 'q' macro (press `Q` to replay)"
+    let g:my_recording_q = 0
+  else
+    normal! qq
+    echom "Recording 'q' macro (press `qq` to stop)"
+    let g:my_recording_q = 1
+  endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global commands
@@ -327,7 +342,6 @@ call MyAliasCommand("a", "A") | " vim-projectionist
 
 " normal mode
 nnoremap U <c-r>|" redo
-nnoremap Q @q|" play q macro
 nnoremap <space> :nohlsearch<cr>|" remove search highlighting
 nnoremap <expr> <cr> (foldlevel(line('.')) > 0 ? 'zazt' : '<cr>') " toggle current fold and move window to view it (if fold is found)
 nnoremap <S-Up> :wincmd k<cr>|" move between windows with shift + arrow keys
@@ -340,6 +354,8 @@ nnoremap <expr> <Up> (&wrap == 'wrap' ? 'k' : 'gk') |" arrows move on "visual" l
 nnoremap <expr> <Down> (&wrap == 'wrap' ? 'j' : 'gj') |" arrows move on "visual" lines when wrapping is on
 nnoremap <silent> q<down> :cclose<cr>:call MyCloseHelp()<cr>|" close quickfix window and help windows
 nnoremap q<up> :copen<cr>|" open quickfix window
+nnoremap qq :call MyToggleRecordQ()<cr>|" start and stop recording q macro
+nnoremap Q @q|" play q macro
 
 " insert mode
 inoremap <up> <nop>|" disable arrow keys
