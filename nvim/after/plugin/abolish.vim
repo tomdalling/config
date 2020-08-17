@@ -1,6 +1,8 @@
-Abolish beleiv{e,es,ed,ing,er}  believ{}
+Abolish adherance ahderence
+Abolish appartment apartment
+Abolish belei{f,fs,ve,ves,ved,ving,ver}  belie{}
+Abolish calender calendar
+Abolish eachother each other
 Abolish seperat{e,es,ed,ing,ely,ion,ions,or}  separat{}
 Abolish {,in}consistant{,ly} {}consistent{}
-Abolish eachother each other
 Abolish {,in,co}dependan{t,ce,tly} {}dependen{}
-Abolish appartment apartment
