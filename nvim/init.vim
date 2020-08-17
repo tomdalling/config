@@ -235,6 +235,9 @@ set wildmode=longest,full
 " would otherwise fail due to the file having unsaved changes
 set autowrite
 
+" enable mouse (see mappings. scroll works, but buttons are disabled)
+set mouse=a
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -243,12 +246,6 @@ augroup MyTerminal
   autocmd!
   " immediately enter insert mode when switching to a terminal
   au BufEnter term://* startinsert!
-
-  " Enable mouse in terminal. It won't scroll unless I do this.
-  " `setlocal` doesn't actually work for `mouse` here, because it's a global
-  " option, so `mouse` needs to be turned off again when exiting a terminal.
-  au BufEnter term://* setlocal mouse=a
-  au BufLeave term://* setlocal mouse=
 augroup END
 
 set ttimeoutlen=5 | " make escape key work faster in terminal
@@ -356,12 +353,20 @@ nnoremap <silent> q<down> :cclose<cr>:call MyCloseHelp()<cr>|" close quickfix wi
 nnoremap q<up> :copen<cr>|" open quickfix window
 nnoremap qq :call MyToggleRecordQ()<cr>|" start and stop recording q macro
 nnoremap Q @q|" play q macro
+nnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
+nnoremap <RightMouse> <nop>|" disable the dang mouse buttons
 
 " insert mode
 inoremap <up> <nop>|" disable arrow keys
 inoremap <down> <nop>|" disable arrow keys
 inoremap <left> <nop>|" disable arrow keys
 inoremap <right> <nop>|" disable arrow keys
+inoremap <LeftMouse> <nop>|" disable the dang mouse buttons
+inoremap <RightMouse> <nop>|" disable the dang mouse buttons
+
+" visual mode
+vnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
+vnoremap <RightMouse> <nop>|" disable the dang mouse buttons
 
 " command line mode
 cnoremap %% <c-r>=expand('%:h').'/'<cr>|" directory of current file
@@ -370,12 +375,12 @@ cnoremap <Left> <Space><BS><Left>|" left key moves cursor in wildmenu
 cnoremap <Right> <Space><BS><Right>|" right key moves cursor in wildmenu
 
 " terminal mode
-tnoremap <ScrollWheelUp> <C-\><C-n><ScrollWheelUp>|" scroll wheel exits terminal mode
-tnoremap <ScrollWheelDown> <C-\><C-n><ScrollWheelDown>|" scroll wheel exits terminal mode
 tnoremap <S-Up> <C-\><C-n>:wincmd k<cr>|" move between windows with shift + arrow keys
 tnoremap <S-Down> <C-\><C-n>:wincmd j<cr>|" move between windows with shift + arrow keys
 tnoremap <S-Left> <C-\><C-n>:wincmd h<cr>|" move between windows with shift + arrow keys
 tnoremap <S-Right> <C-\><C-n>:wincmd l<cr>|" move between windows with shift + arrow keys
+tnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
+tnoremap <RightMouse> <nop>|" disable the dang mouse buttons
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global leader combos
