@@ -314,6 +314,19 @@ function! MyToggleRecordQ() abort
   endif
 endfunction
 
+function! MyEnterKey() abort
+  if &buftype ==# 'terminal'
+    " close terminals
+    quit
+  elseif foldlevel(line('.')) > 0
+    " toggle current fold and move window to view it (if fold is found)
+    normal! zazt
+  else
+    " default behaviour
+    normal! j
+  endif
+endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -340,7 +353,6 @@ call MyAliasCommand("a", "A") | " vim-projectionist
 " normal mode
 nnoremap U <c-r>|" redo
 nnoremap <space> :nohlsearch<cr>|" remove search highlighting
-nnoremap <expr> <cr> (foldlevel(line('.')) > 0 ? 'zazt' : '<cr>') " toggle current fold and move window to view it (if fold is found)
 nnoremap <S-Up> :wincmd k<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Down> :wincmd j<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Left> :wincmd h<cr>|" move between windows with shift + arrow keys
@@ -355,6 +367,7 @@ nnoremap qq :call MyToggleRecordQ()<cr>|" start and stop recording q macro
 nnoremap Q @q|" play q macro
 nnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
 nnoremap <RightMouse> <nop>|" disable the dang mouse buttons
+nnoremap <silent> <cr> :call MyEnterKey()<cr> | " enter key does context-specific stuff
 
 " insert mode
 inoremap <up> <nop>|" disable arrow keys
