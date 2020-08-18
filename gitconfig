@@ -46,6 +46,7 @@
     defaultRemote = origin
 [commit]
     verbose = true
+    template = ~/config/git_commit_template.txt
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
