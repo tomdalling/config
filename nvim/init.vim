@@ -330,7 +330,7 @@ function! MyEnterKey() abort
     normal! zazt
   else
     " default behaviour
-    normal! j
+    exe "normal! \<cr>"
   endif
 endfunction
 
