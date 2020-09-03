@@ -45,6 +45,9 @@ alias wiki='memex run wiki'
 alias todo='memex run --no-mount todo'
 alias ref='memex run ref'
 alias vimrc='vim -O ~/config/nvim/init.vim'
+alias psuhd='pushd' # why can't I type?
+alias psudh='pushd' # why can't I type?
+alias pusdh='pushd' # why can't I type?
 
 # plugin-type things
 source "$CONFIG_BASE/_lib/brew_bash_completion.sh"
