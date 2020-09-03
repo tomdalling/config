@@ -175,7 +175,6 @@ set nowrap
 set textwidth=80 " hard wrap at 80 cols by default
 set formatoptions-=t " DONT wrap text (i.e. code) by default
 set formatoptions+=c " hard-wrap code comments
-set formatoptions+=a " automatically re-format paragraphs
 set formatoptions+=roj " recognise code comments when hard-wrapping
 set formatoptions+=q " allow 'gq' to format comments
 set formatoptions+=n2 " recognise list bullets when hard-wrapping
