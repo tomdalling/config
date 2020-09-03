@@ -16,5 +16,7 @@ function! s:append_globals(session_path) abort
     endif
   endfor
 
+  call add(l:lines, 'windo normal! 0') " scroll to the left of every file
+
   call writefile(l:lines, a:session_path, 'a')
 endfunction
