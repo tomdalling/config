@@ -27,6 +27,10 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-projectionist'
 Plug g:my_config_root.'/vim/bundle/dowl-dabooks'
 
+Plug 'yssl/QFEnter'
+  let g:qfenter_keymap = {}
+  let g:qfenter_keymap.vopen = ['<C-v>']
+
 Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_file_list_command = 'rg --files' " uses .gitignore and such
   let g:gutentags_cache_dir = g:my_config_root . '/nvim/gutentags/'
