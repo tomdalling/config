@@ -337,6 +337,28 @@ function! MyEnterKey() abort
   endif
 endfunction
 
+" uses the jump list to go back/forward to the next/previous file
+function! MyLeap(forward) abort
+  let l:current_bufnr = bufnr('%')
+  let l:jump_offset = 0
+  let [l:jumplist, l:current_idx] = getjumplist()
+  " NOTE: l:current_idx can be past the end of l:jumplist
+  let l:desired_idx = min([l:current_idx, len(l:jumplist)-1])
+
+  while l:desired_idx > 0 && l:desired_idx < len(l:jumplist)
+    if l:jumplist[l:desired_idx].bufnr != bufnr('%')
+      let l:offset = abs(l:current_idx - l:desired_idx)
+      let l:key = a:forward ? "\<c-i>" : "\<c-o>"
+      exe "normal! " . l:offset . l:key
+      return
+    else
+      let l:desired_idx += a:forward ? 1 : -1
+    endif
+  endwhile
+
+  echom "No further files"
+endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " global commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -378,6 +400,10 @@ nnoremap Q @q|" play q macro
 nnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
 nnoremap <RightMouse> <nop>|" disable the dang mouse buttons
 nnoremap <silent> <cr> :call MyEnterKey()<cr> | " enter key does context-specific stuff
+
+" these are mapped to <c-s-o> and <c-s-i> via iTerm2
+nnoremap <F18> :call MyLeap(0)<cr>| " <c-o> back to previous file
+nnoremap <F19> :call MyLeap(1)<cr>| " <c-i> forward to next file
 
 " insert mode
 inoremap <up> <nop>|" disable arrow keys
