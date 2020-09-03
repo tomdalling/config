@@ -239,7 +239,7 @@ set foldminlines=6 " don't fold small things
 set foldopen=hor,insert,jump,mark,percent,quickfix,search,tag,undo " things that auto-open a fold
 
 " tab completion in commands
-set wildmode=longest,full
+set wildmode=longest:full,full
 
 " auto-save file before certain commands, like <C-]> for tag jumping, which
 " would otherwise fail due to the file having unsaved changes
