@@ -308,22 +308,6 @@ function! MySystemCopyOpfunc(type) abort
   call MySystemPasteboardYank(a:type, 0)
 endfunction
 
-function! MyToggleRecordQ() abort
-  if(!exists('g:my_recording_q'))
-    let g:my_recording_q = 0
-  endif
-
-  if g:my_recording_q
-    normal! q
-    echom "Finished recording 'q' macro (press `Q` to replay)"
-    let g:my_recording_q = 0
-  else
-    normal! qq
-    echom "Recording 'q' macro (press `qq` to stop)"
-    let g:my_recording_q = 1
-  endif
-endfunction
-
 function! MyEnterKey() abort
   if &buftype ==# 'terminal'
     " close terminals
@@ -395,7 +379,6 @@ nnoremap <expr> <Up> (&wrap == 'wrap' ? 'k' : 'gk') |" arrows move on "visual" l
 nnoremap <expr> <Down> (&wrap == 'wrap' ? 'j' : 'gj') |" arrows move on "visual" lines when wrapping is on
 nnoremap <silent> q<down> :cclose<cr>:call MyCloseHelp()<cr>|" close quickfix window and help windows
 nnoremap q<up> :copen<cr>|" open quickfix window
-nnoremap qq :call MyToggleRecordQ()<cr>|" start and stop recording q macro
 nnoremap Q @q|" play q macro
 nnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
 nnoremap <RightMouse> <nop>|" disable the dang mouse buttons
