@@ -382,7 +382,7 @@ nnoremap q<up> :copen<cr>|" open quickfix window
 nnoremap Q @q|" play q macro
 nnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
 nnoremap <RightMouse> <nop>|" disable the dang mouse buttons
-nnoremap <silent> <cr> :call MyEnterKey()<cr> | " enter key does context-specific stuff
+nnoremap <silent> <cr> :call MyEnterKey()<cr>| " enter key does context-specific stuff
 
 " these are mapped to <c-s-o> and <c-s-i> via iTerm2
 nnoremap <F18> :call MyLeap(0)<cr>| " <c-o> back to previous file
