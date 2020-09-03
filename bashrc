@@ -11,6 +11,11 @@ export PAGER="less -r" # -r allows ansi coloring
 export XDG_CONFIG_HOME="$CONFIG_BASE"
 export FZF_DEFAULT_COMMAND="rg --files" # respects .gitignore
 
+# homebrew security/privacy: https://github.com/drduh/macOS-Security-and-Privacy-Guide
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS="--require-sha"
+
 # bash settings
 set completion-ignore-case On
 stty -ixon # allows ctrl+s to pass through to vim
