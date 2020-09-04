@@ -254,6 +254,8 @@ set mouse=a
 
 augroup MyTerminal
   autocmd!
+  " workaround for a segfault: https://github.com/neovim/neovim/issues/11548#issuecomment-583081783
+  au TermOpen * setlocal wrap
   " immediately enter insert mode when switching to a terminal
   au BufEnter term://* startinsert!
 augroup END
