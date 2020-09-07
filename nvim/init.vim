@@ -369,6 +369,7 @@ call MyAliasCommand("a", "A") | " vim-projectionist
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " normal mode
+nnoremap Y y$|" make y/Y behave like d/D
 nnoremap U <c-r>|" redo
 nnoremap <space> :nohlsearch<cr>|" remove search highlighting
 nnoremap <S-Up> :wincmd k<cr>|" move between windows with shift + arrow keys
