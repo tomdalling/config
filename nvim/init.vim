@@ -428,8 +428,8 @@ nnoremap <leader>s 1z=|" correct word to the most-likely spellcheck alternative
 nnoremap <silent> <leader>c :set opfunc=MySystemCopyOpfunc<CR>g@|" copy to system clipboard (with movement)
 nnoremap <silent> <leader>y :set opfunc=MySystemCopyOpfunc<CR>g@|" yank (copy) to system clipboard (with movement)
 nnoremap <silent> <leader>x :set opfunc=MySystemCutOpfunc<CR>g@|" cut to system clipboard (with movement)
-nnoremap <leader>p "*p|" paste from system clipboard
-nnoremap <leader>P "*P|" paste from system clipboard
+nnoremap <leader>p "*pv`]|" paste from system clipboard and select
+nnoremap <leader>P "*Pv`]|" paste from system clipboard
 
 nnoremap <leader>vs :source %<cr>|" (v)im (s)ource current file
 nnoremap <leader>vv :exe 'vsplit' g:my_config_root.'/nvim/init.vim'<cr>|" (v)im edit (v)imrc
