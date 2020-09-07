@@ -257,7 +257,7 @@ augroup MyTerminal
   " workaround for a segfault: https://github.com/neovim/neovim/issues/11548#issuecomment-583081783
   au TermOpen * setlocal wrap
   " immediately enter insert mode when switching to a terminal
-  au BufEnter term://* startinsert!
+  "au BufEnter term://* startinsert!
 augroup END
 
 set ttimeoutlen=5 | " make escape key work faster in terminal
