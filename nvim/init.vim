@@ -34,6 +34,7 @@ Plug 'yssl/QFEnter'
 Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_file_list_command = 'rg --files' " uses .gitignore and such
   let g:gutentags_cache_dir = g:my_config_root . '/nvim/gutentags/'
+  " let g:gutentags_trace = 1
 
 Plug 'tomdalling/vim-markdown-extras'
 " Plug '~/proj/vim-markdown-extras'
