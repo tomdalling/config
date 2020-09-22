@@ -38,6 +38,13 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'tomdalling/vim-markdown-extras'
 " Plug '~/proj/vim-markdown-extras'
 
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+  let g:pandoc#syntax#conceal#urls = 1 " hide URL of links
+  let g:pandoc#formatting#mode = "h" " use hard wraps
+  " disable some default mappings (conflicts with vim-markdown-extras)
+  let g:pandoc#keyboard#blacklist_submodule_mappings = ['links']
+
 Plug 'ntpeters/vim-better-whitespace'
   let g:better_whitespace_operator='' " disable <leader>s mapping (I don't use it)
 
@@ -110,13 +117,6 @@ Plug 'jremmen/vim-ripgrep'
 
 Plug 'overcache/NeoSolarized'
   let g:neosolarized_contrast = "high"
-
-Plug 'tomdalling/vim-markdown'
-  let g:vim_markdown_frontmatter = 1 | " syntax highlight markdown YAML frontmatter
-  let g:vim_markdown_folding_disabled = 1 | " don't fold by default
-  let g:vim_markdown_conceal_code_blocks = 0 | " don't hide code fences (```)
-  let g:vim_markdown_autowrite = 1 | " save current file when following link
-  let g:vim_markdown_new_list_item_indent = 0 | " disable weird indenting behaviour
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
