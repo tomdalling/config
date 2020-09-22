@@ -18,6 +18,7 @@ brew "pandoc"
 brew "postgresql", restart_service: true
 brew "ripgrep"
 brew "ruby-install"
+brew "tarsnap"
 brew "heroku/brew/heroku"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ['HEAD']
 
