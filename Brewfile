@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
 
 brew "bash"
 brew "bash-completion@2"
@@ -31,6 +32,7 @@ cask "discord"
 cask "karabiner-elements"
 cask "keybase"
 cask "lunar"
+cask "font-fira-code"
 
 mas 'Todoist', id: 585829637
 mas 'Slack', id: 803453959
