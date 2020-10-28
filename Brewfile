@@ -22,6 +22,7 @@ brew "tarsnap"
 brew "heroku/brew/heroku"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ['HEAD']
 
+cask "google-chrome"
 cask "alfred"
 cask "gitup"
 cask "iterm2"
