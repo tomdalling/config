@@ -26,6 +26,10 @@ cask "alfred"
 cask "gitup"
 cask "iterm2"
 cask "macvim"
+cask "discord"
+cask "karabiner-elements"
+cask "keybase"
+cask "lunar"
 
 mas 'Todoist', id: 585829637
 mas 'Slack', id: 803453959
