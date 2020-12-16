@@ -383,7 +383,7 @@ nnoremap gQ <nop>|" disable entering Ex mode (im hitting this accidentally)
 nnoremap <expr> <Up> (&wrap == 'wrap' ? 'k' : 'gk') |" arrows move on "visual" lines when wrapping is on
 nnoremap <expr> <Down> (&wrap == 'wrap' ? 'j' : 'gj') |" arrows move on "visual" lines when wrapping is on
 nnoremap <silent> q<down> :cclose<cr>:call MyCloseHelp()<cr>|" close quickfix window and help windows
-nnoremap q<up> :copen<cr>|" open quickfix window
+nnoremap q<up> :bot copen<cr>|" open quickfix window
 nnoremap Q @q|" play q macro
 nnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
 nnoremap <RightMouse> <nop>|" disable the dang mouse buttons
