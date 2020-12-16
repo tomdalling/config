@@ -14,6 +14,7 @@
     f = fetch
     fr = !git fetch && git rebase
     from = !git fetch origin master && git rebase origin/master
+    fmom = !git fetch origin master && git merge origin/master
     ri = rebase -i
     riom = rebase -i origin/master
     p = push
