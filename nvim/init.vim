@@ -50,14 +50,6 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'ntpeters/vim-better-whitespace'
   let g:better_whitespace_operator='' " disable <leader>s mapping (I don't use it)
 
-Plug 'camspiers/animate.vim'
-Plug 'camspiers/lens.vim'
-  let g:lens#disabled_filetypes = ['fzf']
-  let g:lens#height_resize_max = 30 " replaces 'winheight'
-  let g:lens#height_resize_min = 7 " replaces 'winminheight'
-  let g:lens#width_resize_max = 90 " replaces 'winwidth'
-  let g:lens#width_resize_min = 20 " replaces 'winminwidth'
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
   " (g)it (s)tatus -- Open :Git at the bottom, 13 rows high, jump to first file
@@ -260,6 +252,20 @@ set autowrite
 
 " enable mouse (see mappings. scroll works, but buttons are disabled)
 set mouse=a
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" automatic window resizing
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup MyWindowAutoresizing
+  autocmd!
+  autocmd WinEnter * :call ResizeSplits()
+augroup END
+
+function! ResizeSplits()
+  " Automatically resize active split to 85 width
+  set winwidth=85
+  wincmd =
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terminal
