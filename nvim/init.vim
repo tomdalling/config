@@ -58,6 +58,17 @@ Plug 'camspiers/lens.vim'
   let g:lens#width_resize_max = 90 " replaces 'winwidth'
   let g:lens#width_resize_min = 20 " replaces 'winminwidth'
 
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+  " (g)it (s)tatus -- Open :Git at the bottom, 13 rows high, jump to first file
+  nmap <silent> <leader>gs :bot Git <bar> setlocal winfixheight <bar> resize 13 <bar> normal )<cr>
+  " (g)it (S)TATUS -- Open :Git fullscreen
+  nmap <silent> <leader>gS :tabedit <bar> Git <bar> only <bar> normal )<cr>
+  " (g)it(h)ub (o)pen -- Open link to current line on GitHub
+  nmap <leader>gho :.GBrowse<cr>
+  " (g)it(h)ub (y)ank -- Copy link to current line/selection on GitHub
+  nmap <leader>ghy :'<,'>GBrowse!<cr>
+
 Plug 'airblade/vim-gitgutter'
   let g:gitgutter_map_keys = 0 | " define mappings myself
   nmap ]h <Plug>(GitGutterNextHunk)
