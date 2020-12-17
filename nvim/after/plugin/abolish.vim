@@ -1,6 +1,7 @@
 Abolish adherance ahderence
 Abolish appartment apartment
 Abolish belei{f,fs,ve,ves,ved,ving,ver}  belie{}
+Abolish peice piece
 Abolish calender calendar
 Abolish eachother each other
 Abolish seperat{e,es,ed,ing,ely,ion,ions,or}  separat{}
