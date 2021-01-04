@@ -269,17 +269,37 @@ set autowriteall
 set mouse=a
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" automatic window resizing
+" automatic window switching behaviour
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup MyWindowAutoresizing
+augroup MyWindowSwitching
   autocmd!
-  autocmd WinEnter * :call ResizeSplits()
+
+  " Automatically resize active split to 85 width, distributing remaining width
+  " evenly
+  autocmd WinEnter * set winwidth=85 | wincmd =
+  autocmd WinLeave * :call MyWindowDefocus()
+  autocmd WinEnter * :call MyWindowRefocus()
 augroup END
 
-function! ResizeSplits()
-  " Automatically resize active split to 85 width
-  set winwidth=85
-  wincmd =
+function MyWindowDefocus()
+  setlocal nocursorline
+  setlocal signcolumn=no
+  setlocal norelativenumber
+  setlocal nonumber
+
+  let w:my_refocus_colorcolumn = &colorcolumn
+  setlocal colorcolumn=
+endfunction
+
+function MyWindowRefocus()
+  setlocal cursorline<
+  setlocal signcolumn=
+  setlocal relativenumber<
+  setlocal number<
+
+  if has_key(w:, 'my_refocus_colorcolumn')
+    let &colorcolumn = w:my_refocus_colorcolumn
+  end
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
