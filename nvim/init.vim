@@ -60,13 +60,15 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
   " (g)it (s)tatus -- Open :Git at the bottom, 13 rows high, jump to first file
-  nmap <silent> <leader>gs :bot Git <bar> setlocal winfixheight <bar> resize 13 <bar> normal )<cr>
+  nnoremap <silent> <leader>gs :bot Git <bar> setlocal winfixheight <bar> resize 13 <bar> normal )<cr>
   " (g)it (S)TATUS -- Open :Git fullscreen
-  nmap <silent> <leader>gS :tabedit <bar> Git <bar> only <bar> normal )<cr>
-  " (g)it(h)ub (o)pen -- Open link to current line on GitHub
-  nmap <leader>gho :.GBrowse<cr>
-  " (g)it(h)ub (y)ank -- Copy link to current line/selection on GitHub
-  nmap <leader>ghy :'<,'>GBrowse!<cr>
+  nnoremap <silent> <leader>gS :tabedit <bar> Git <bar> only <bar> normal )<cr>
+  " (g)it(h)ub open e(x)ternal -- Open link to current line/selection on GitHub
+  nnoremap <leader>ghx :.GBrowse<cr>
+  xnoremap <leader>ghx :'<,'>GBrowse<cr>
+  " (g)it(h)ub (l)ink -- Copy link to current line/selection on GitHub
+  nnoremap <leader>ghl :.GBrowse!<cr>
+  xnoremap <leader>ghl :'<,'>GBrowse!<cr>
 
 Plug 'airblade/vim-gitgutter'
   let g:gitgutter_map_keys = 0 | " define mappings myself
