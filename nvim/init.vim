@@ -246,7 +246,7 @@ set autoread
 augroup MyChecktime
   autocmd!
   if !has("gui_running")
-    autocmd BufEnter,FocusGained,BufEnter,FocusLost,WinLeave * checktime
+    autocmd BufEnter,FocusGained,WinEnter,VimResume * checktime
   endif
 augroup END
 
