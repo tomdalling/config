@@ -35,6 +35,7 @@
         fi"
 [core]
     excludesfile = ~/config/gitignore_global
+    attributesfile = ~/config/gitattributes_global
     pager = diffr | less --RAW-CONTROL-CHARS --chop-long-lines
 [color]
     ui = true
@@ -56,3 +57,5 @@
 	tool = opendiff
 [interactive]
 	difffilter = diffr
+[diff "rspec"]
+  xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
