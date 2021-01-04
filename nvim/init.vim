@@ -248,7 +248,7 @@ set wildmode=longest:full,full
 
 " auto-save file before certain commands, like <C-]> for tag jumping, which
 " would otherwise fail due to the file having unsaved changes
-set autowrite
+set autowriteall
 
 " enable mouse (see mappings. scroll works, but buttons are disabled)
 set mouse=a
