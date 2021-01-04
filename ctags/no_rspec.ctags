@@ -1,0 +1,2 @@
+# don't generate tags from RSpec
+--exclude=*_spec.rb
