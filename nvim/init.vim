@@ -179,6 +179,9 @@ Plug 'AndrewRadev/sideways.vim'
   nnoremap g<left> :SidewaysLeft<cr>
   nnoremap g<right> :SidewaysRight<cr>
 
+" Overcommit (not really a plugin but meh)
+  let $OVERCOMMIT_COLOR=0 " prevent overcommit output from including weird color characters using env var
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
