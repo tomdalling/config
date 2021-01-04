@@ -50,10 +50,12 @@ alias psuhd='pushd' # why can't I type?
 alias psudh='pushd' # why can't I type?
 alias pusdh='pushd' # why can't I type?
 
-# plugin-type things
-source "$CONFIG_BASE/_lib/brew_bash_completion.sh"
-source "$CONFIG_BASE/_lib/git_ps1.sh"
-source "$CONFIG_BASE/_lib/starship.sh"
+# plugin-type things (only if in a tty)
+if [ -t 1 ] ; then
+  source "$CONFIG_BASE/_lib/brew_bash_completion.sh"
+  source "$CONFIG_BASE/_lib/git_ps1.sh"
+  source "$CONFIG_BASE/_lib/starship.sh"
+fi
 
 source_if_exists "$HOME/.bashrc.local"
 source_if_exists "$HOME/.fzf.bash" # fzf dumps config here on install
