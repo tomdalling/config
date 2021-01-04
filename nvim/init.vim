@@ -50,6 +50,13 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'ntpeters/vim-better-whitespace'
   let g:better_whitespace_operator='' " disable <leader>s mapping (I don't use it)
 
+  " filetype detection doesn't work properly, so need to disable this with an
+  " autocmd. See: https://github.com/ntpeters/vim-better-whitespace/issues/137
+  augroup MyDisableBetterWhitespaceInFigutive
+    autocmd!
+    autocmd FileType fugitive DisableWhitespace
+  augroup END
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
   " (g)it (s)tatus -- Open :Git at the bottom, 13 rows high, jump to first file
