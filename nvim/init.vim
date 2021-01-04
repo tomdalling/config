@@ -330,12 +330,25 @@ set ttimeoutlen=5 | " make escape key work faster in terminal
 " functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! MyCloseHelp() abort
+function! MyCloseAuxilliaryWindows() abort
+  cclose " close quickfix window
+
   for l:buf in nvim_list_bufs()
-    if getbufvar(l:buf, '&buftype', 'ERROR') ==# 'help' " only help buffers
-      if bufwinnr(l:buf) != -1 " only active (visible) buffers
-        exe 'bdelete' l:buf
-      endif
+    let l:close = 0
+
+    " help windows
+    if getbufvar(l:buf, '&buftype', 'ERROR') ==# 'help'
+      let l:close = 1
+    endif
+
+    " fugitive windows
+    if getbufvar(l:buf, '&filetype', 'ERROR') ==# 'fugitive'
+      let l:close = 1
+    end
+
+    " only active (visible) buffers
+    if l:close && bufwinnr(l:buf) != -1
+      exe 'bdelete' l:buf
     endif
   endfor
 endfunction
@@ -443,7 +456,7 @@ nnoremap <S-Right> :wincmd l<cr>|" move between windows with shift + arrow keys
 nnoremap gQ <nop>|" disable entering Ex mode (im hitting this accidentally)
 nnoremap <expr> <Up> (&wrap == 'wrap' ? 'k' : 'gk') |" arrows move on "visual" lines when wrapping is on
 nnoremap <expr> <Down> (&wrap == 'wrap' ? 'j' : 'gj') |" arrows move on "visual" lines when wrapping is on
-nnoremap <silent> q<down> :cclose<cr>:call MyCloseHelp()<cr>|" close quickfix window and help windows
+nnoremap <silent> q<down> :call MyCloseAuxilliaryWindows()<cr>
 nnoremap q<up> :bot copen<cr>|" open quickfix window
 nnoremap Q @q|" play q macro
 nnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
