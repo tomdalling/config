@@ -127,6 +127,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
   let g:airline_theme='solarized'
   let g:airline_solarized_bg='dark'
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+  let g:airline#extensions#tabline#show_splits = 1
+  let g:airline#extensions#tabline#show_buffers = 0
   let g:airline#extensions#default#section_truncate_width = {
       \ 'a': 79,
       \ 'b': 79,
