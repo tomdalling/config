@@ -7,7 +7,6 @@ function! MyGutentagsWorkaround() abort
 
   for tag_file_path in values(b:gutentags_files)
     if stridx(&tags, tag_file_path) == -1
-      echom 'Fixing tag path: ' . tag_file_path
       if has('win32') || has('win64')
         execute 'setlocal tags^=' . fnameescape(tag_file_path)
       else
