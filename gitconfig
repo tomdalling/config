@@ -35,7 +35,7 @@
         fi"
 [core]
     excludesfile = ~/config/gitignore_global
-    pager = less --chop-long-lines
+    pager = diffr | less --RAW-CONTROL-CHARS --chop-long-lines
 [color]
     ui = true
 [branch]
@@ -54,3 +54,5 @@
 	required = true
 [merge]
 	tool = opendiff
+[interactive]
+	difffilter = diffr
