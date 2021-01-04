@@ -280,6 +280,9 @@ set autowriteall
 " enable mouse (see mappings. scroll works, but buttons are disabled)
 set mouse=a
 
+" give a little bit of a perf improvement when running commands/macros
+set lazyredraw
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " automatic window switching behaviour
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
