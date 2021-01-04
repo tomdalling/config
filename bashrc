@@ -1,6 +1,5 @@
 CONFIG_BASE="$HOME/config"
 source "$CONFIG_BASE/_lib/bash_common.sh"
-source "$CONFIG_BASE/_lib/chruby.sh"
 
 # environment vars
 export EDITOR='nvim'
@@ -56,6 +55,9 @@ if [ -t 1 ] ; then
   source "$CONFIG_BASE/_lib/git_ps1.sh"
   source "$CONFIG_BASE/_lib/starship.sh"
 fi
+
+# needs to come after starship or it doesn't work properly
+source "$CONFIG_BASE/_lib/chruby.sh"
 
 source_if_exists "$HOME/.bashrc.local"
 source_if_exists "$HOME/.fzf.bash" # fzf dumps config here on install
