@@ -127,6 +127,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
   let g:airline_theme='solarized'
   let g:airline_solarized_bg='dark'
+  let g:airline#extensions#default#section_truncate_width = {
+      \ 'a': 79,
+      \ 'b': 79,
+      \ 'x': 60,
+      \ 'y': 88,
+      \ 'z': 45,
+      \ 'warning': 80,
+      \ 'error': 80,
+      \ }
 
 Plug 'tpope/vim-eunuch'
   nnoremap <leader>fr :call feedkeys(":Rename " . expand('%:t'))<CR>|" (f)ile (r)ename
