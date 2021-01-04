@@ -119,6 +119,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'jremmen/vim-ripgrep'
   let g:rg_command = 'rg --vimgrep --smart-case' | " use 'smart case mode' in ripgrep
   nnoremap <leader>a :Rg<cr>|" search using word under cursor
+  vnoremap <leader>a y:Rg '<c-r>"'<cr>|" search using selected text
 
 Plug 'overcache/NeoSolarized'
   let g:neosolarized_contrast = "high"
