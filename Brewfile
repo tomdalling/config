@@ -21,12 +21,13 @@ brew "pandoc"
 brew "postgresql", restart_service: true
 brew "ripgrep"
 brew "ruby-install"
+brew "starship"
 brew "tarsnap"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ['HEAD']
 
 cask "alfred"
 cask "discord"
-cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "gitup"
 cask "google-chrome"
 cask "iterm2"
