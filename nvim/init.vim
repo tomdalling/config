@@ -408,7 +408,6 @@ nnoremap <S-Up> :wincmd k<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Down> :wincmd j<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Left> :wincmd h<cr>|" move between windows with shift + arrow keys
 nnoremap <S-Right> :wincmd l<cr>|" move between windows with shift + arrow keys
-nnoremap <c-]> g<c-]>|" better tag jumping
 nnoremap gQ <nop>|" disable entering Ex mode (im hitting this accidentally)
 nnoremap <expr> <Up> (&wrap == 'wrap' ? 'k' : 'gk') |" arrows move on "visual" lines when wrapping is on
 nnoremap <expr> <Down> (&wrap == 'wrap' ? 'j' : 'gj') |" arrows move on "visual" lines when wrapping is on
