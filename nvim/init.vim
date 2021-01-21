@@ -142,12 +142,15 @@ Plug 'vim-airline/vim-airline-themes'
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
   let g:airline#extensions#tabline#show_splits = 1
   let g:airline#extensions#tabline#show_buffers = 0
+  let g:airline#extensions#branch#enabled = 0
+  let g:airline_detect_spell=0
+  let g:airline#extensions#wordcount#filetypes = ['markdown', 'pandoc']
   let g:airline#extensions#default#section_truncate_width = {
       \ 'a': 79,
       \ 'b': 79,
-      \ 'x': 60,
-      \ 'y': 88,
-      \ 'z': 45,
+      \ 'x': 108,
+      \ 'y': 108,
+      \ 'z': 65,
       \ 'warning': 80,
       \ 'error': 80,
       \ }
