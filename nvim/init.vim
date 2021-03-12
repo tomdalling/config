@@ -61,6 +61,8 @@ Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+  " (g)it (b)lame -- Open `:Git blame %` in a new tab
+  nnoremap <leader>gb :tabnew % <bar> :Git blame<cr>
   " (g)it (s)tatus -- Open :Git at the bottom, 13 rows high, jump to first file
   nnoremap <silent> <leader>gs :bot Git <bar> setlocal winfixheight <bar> resize 13 <bar> normal )<cr>
   " (g)it (S)TATUS -- Open :Git fullscreen
