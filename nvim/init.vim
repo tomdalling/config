@@ -26,6 +26,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-projectionist'
 Plug 'slim-template/vim-slim'
+Plug 'ngmy/vim-rubocop'
 Plug g:my_config_root.'/vim/bundle/dowl-dabooks'
 
 Plug 'yssl/QFEnter'
