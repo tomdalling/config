@@ -56,6 +56,7 @@ Plug 'ntpeters/vim-better-whitespace'
   augroup MyDisableBetterWhitespaceInFigutive
     autocmd!
     autocmd FileType fugitive DisableWhitespace
+    autocmd FileType git DisableWhitespace
   augroup END
 
 Plug 'tpope/vim-fugitive'
