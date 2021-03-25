@@ -452,6 +452,8 @@ call MyAliasCommand("VA", "AV") | " vim-projectionist
 call MyAliasCommand("Va", "AV") | " vim-projectionist
 call MyAliasCommand("a", "A") | " vim-projectionist
 
+call MyAliasCommand("xt", "tabclose")
+
 command! AbolishEdit exe 'split' g:my_config_root.'/nvim/after/plugin/abolish.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
