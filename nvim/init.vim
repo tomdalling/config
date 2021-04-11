@@ -189,6 +189,10 @@ Plug 'AndrewRadev/sideways.vim'
   nnoremap g<left> :SidewaysLeft<cr>
   nnoremap g<right> :SidewaysRight<cr>
 
+Plug 'Olical/aniseed', { 'tag': 'v3.16.0' }
+Plug 'bakpakin/fennel.vim'
+  let g:aniseed#env = v:true " load Fennel code as if it were viml
+
 " Overcommit (not really a plugin but meh)
   let $OVERCOMMIT_COLOR=0 " prevent overcommit output from including weird color characters using env var
 
