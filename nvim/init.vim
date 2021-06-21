@@ -132,9 +132,14 @@ Plug 'pbogut/fzf-mru.vim'
 
 Plug 'jremmen/vim-ripgrep'
   let g:rg_command = 'rg --vimgrep --smart-case' | " use 'smart case mode' in ripgrep
-  nnoremap <leader>a :Rg<cr>|" search using word under cursor
-  nnoremap <leader>A lB:Rg -F "<c-r><c-a>"<cr>|" search using FULL word under cursor
-  vnoremap <leader>a y:Rg '<c-r>"'<cr>|" search using selected text
+  nnoremap <leader>a :call MyGlobalSearch(expand('<cword>'))<cr>|" search using word under cursor
+  nnoremap <leader>A lB:call MyGlobalSearch(expand('<cWORD>'))<cr>|" search using FULL word under cursor
+  vnoremap <leader>a y:call MyGlobalSearch(@")<cr>|" search using selected text
+  function! MyGlobalSearch(text)
+    let @/ = a:text
+    exec "Rg -F " . shellescape(a:text)
+    echo 'Search results for:' a:text
+  endfunction
 
 Plug 'overcache/NeoSolarized'
   let g:neosolarized_contrast = "high"
