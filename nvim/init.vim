@@ -248,6 +248,7 @@ set nomodeline
 
 " no hidden backup or swap files
 set nobackup
+set nowritebackup
 set noswapfile
 
 " keep undo history
