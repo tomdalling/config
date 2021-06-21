@@ -63,10 +63,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
   " (g)it (b)lame -- Open `:Git blame %` in a new tab
   nnoremap <leader>gb :tabnew % <bar> :Git blame<cr>
-  " (g)it (s)tatus -- Open :Git at the bottom, 13 rows high, jump to first file
-  nnoremap <silent> <leader>gs :bot Git <bar> setlocal winfixheight <bar> resize 13 <bar> normal )<cr>
   " (g)it (S)TATUS -- Open :Git fullscreen
   nnoremap <silent> <leader>gS :tabedit <bar> Git <bar> only <bar> normal )<cr>
+  " (g)it (c)heckout -- Checks out current file from HEAD
+  nnoremap <silent> <leader>gc :Git checkout -- %<cr>:checktime<cr>
   " (g)it(h)ub open e(x)ternal -- Open link to current line/selection on GitHub
   nnoremap <leader>ghx :.GBrowse<cr>
   xnoremap <leader>ghx :'<,'>GBrowse<cr>
