@@ -63,6 +63,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
   " (g)it (b)lame -- Open `:Git blame %` in a new tab
   nnoremap <leader>gb :tabnew % <bar> :Git blame<cr>
+  " (g)it (c)log -- Show git commit history for current file
+  nnoremap <leader>gl :tabnew % <bar> :Git log --patch -- % <bar> only <cr>
   " (g)it (S)TATUS -- Open :Git fullscreen
   nnoremap <silent> <leader>gS :tabedit <bar> Git <bar> only <bar> normal )<cr>
   " (g)it (c)heckout -- Checks out current file from HEAD
