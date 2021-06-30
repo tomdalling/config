@@ -31,7 +31,6 @@ export CDPATH=".:~:~/proj:/Volumes" # easy `cd`ing into common directories
 # aliases
 alias ls='ls -lhF'
 alias g='git'
-alias gs='git s'
 alias r='rails'
 alias ri='ri -f ansi'
 alias be='bundle exec'
