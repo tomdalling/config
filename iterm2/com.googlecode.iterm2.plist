@@ -376,7 +376,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -400,11 +400,11 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>399 356 716 400 0 0 1440 875 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>154 11 1495 852 0 0 1920 1055 </string>
+	<string>505 465 810 558 0 0 1920 1055 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>346 138 825 558 0 0 1440 875 </string>
+	<string>-1309 -830 825 558 -1440 -900 1440 875 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>756 362 825 552 0 0 1920 1057 </string>
+	<string>74 0 1846 1055 0 0 1920 1055 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>872 113 905 602 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -1014,6 +1014,8 @@
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.17051124572753906</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1106,12 +1108,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{292, 751}</string>
+		<string>{628, 585}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>1E4162D4-55F0-4F9D-9F2B-EADD86E8B6B8</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>18</integer>
+	<integer>28</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>608466268.65972102</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1469,6 +1471,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
