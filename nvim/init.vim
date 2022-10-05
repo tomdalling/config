@@ -328,7 +328,7 @@ endfunction
 
 function MyWindowRefocus()
   setlocal cursorline<
-  setlocal signcolumn=
+  setlocal signcolumn=auto
   setlocal relativenumber<
   setlocal number<
 
