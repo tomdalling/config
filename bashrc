@@ -17,8 +17,9 @@ export HOMEBREW_NO_INSECURE_REDIRECT=1 # more security
 export HOMEBREW_CASK_OPTS="--require-sha" # more security
 
 # bash settings
-set completion-ignore-case On
-stty -ixon # allows ctrl+s to pass through to vim
+if [ -n "$PS1" ] ; then
+  stty -ixon # allows ctrl+s to pass through to vim
+fi
 shopt -s histappend # append instead of replace history
 shopt -s cmdhist # one line per command in history
 export HISTFILESIZE=1000000 # bigger history file

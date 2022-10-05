@@ -32,6 +32,7 @@ cd "$(dirname "$0")"
 
 replace_with_sym bash_profile
 replace_with_sym bashrc
+replace_with_sym inputrc
 replace_with_sym irbrc
 replace_with_sym gitconfig
 replace_with_sym gemrc
