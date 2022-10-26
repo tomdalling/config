@@ -108,6 +108,13 @@ Plug 'vim-ruby/vim-ruby'
     let ruby_global_variable_error = 1
   ]]
 
+Plug 'vim-test/vim-test'
+  vim.keymap.set('n', '<leader>tt', ':TestLast<cr>')
+  vim.keymap.set('n', '<leader>tn', ':TestNearest<cr>')
+  vim.keymap.set('n', '<leader>tf', ':TestFile<cr>')
+  vim.keymap.set('n', '<leader>ta', ':TestSuite<cr>')
+  vim.keymap.set('n', '<leader>tv', ':TestVisit<cr>')
+
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
