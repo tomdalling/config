@@ -323,7 +323,11 @@ cmp.setup({
 })
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-require('lspconfig')['solargraph'].setup {
+local lspconfig = require('lspconfig')
+lspconfig.solargraph.setup {
+  capabilities = capabilities
+}
+lspconfig.tsserver.setup {
   capabilities = capabilities
 }
 
