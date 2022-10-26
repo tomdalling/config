@@ -115,6 +115,15 @@ Plug 'vim-test/vim-test'
   vim.keymap.set('n', '<leader>ta', ':TestSuite<cr>')
   vim.keymap.set('n', '<leader>tv', ':TestVisit<cr>')
 
+Plug 'airblade/vim-gitgutter'
+  vim.g.gitgutter_map_keys = 0 -- define mappings myself
+  vim.keymap.set('n', ']h', '<Plug>(GitGutterNextHunk)')
+  vim.keymap.set('n', '[h', '<Plug>(GitGutterPrevHunk)')
+  vim.keymap.set('n', '<leader>hc', '<Plug>(GitGutterUndoHunk)') --  (h)unk (c)heckout -- undoes hunk changes
+  vim.keymap.set('n', '<leader>hp', '<Plug>(GitGutterPreviewHunk)') --  (h)unk (p)review
+  vim.keymap.set('n', '<leader>hs', '<Plug>(GitGutterStageHunk)') --  (h)unk (s)tage
+  vim.opt.updatetime = 100 -- milliseconds before updating the gutter (also affects swap file writing)
+
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
