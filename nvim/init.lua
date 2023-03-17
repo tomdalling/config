@@ -25,7 +25,7 @@ Plug 'tpope/vim-rhubarb'
   -- (g)it (b)lame -- Open `:Git blame %` in a new tab
   vim.keymap.set('n', '<leader>gb', ':tabnew % <bar> :Git blame<cr>')
   -- (g)it (l)og -- Show git commit history for current file
-  vim.keymap.set('n', '<leader>gl', ':tabnew % <bar> :Git log --patch -- % <bar> only <cr>')
+  vim.keymap.set('n', '<leader>gl', ':tabnew % <bar> :Git log --patch --follow -- % <bar> only <cr>')
   -- (g)it (S)TATUS -- Open :Git fullscreen
   vim.keymap.set('n', '<leader>gS', ':tabedit <bar> Git <bar> only <bar> normal )<cr>', {silent = true})
   -- (g)it (c)heckout -- Checks out current file from HEAD
