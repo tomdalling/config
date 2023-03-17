@@ -182,7 +182,7 @@ vim.opt.textwidth = 80 -- hard wrap at 80 cols by default
 vim.opt.ttimeoutlen = 5 -- make escape key work faster in terminal
 vim.opt.undofile = true
 vim.opt.undolevels = 1000
-vim.opt.wildmode = {longest = 'full', full=true}
+vim.opt.wildmode = "longest:full,full"
 vim.opt.wrap = false
 vim.opt.writebackup = false
 vim.opt.signcolumn = 'yes'
