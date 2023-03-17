@@ -415,6 +415,10 @@ vim.keymap.set('i', '<RightMouse>', '<nop>') -- disable the dang mouse buttons
 -- command line mode
 --
 vim.keymap.set('c', '%%', "<c-r>=expand('%:h').'/'<cr>") -- directory of current file
+vim.keymap.set('c', '<C-A>', '<Home>') -- ctrl-a jumps to start of command line
+-- cnoremap <Left> <Space><BS><Left>|" left key moves cursor in wildmenu
+-- cnoremap <Right> <Space><BS><Right>|" right key moves cursor in wildmenu
+
 --
 -- TODO
 --
@@ -431,12 +435,6 @@ vim.keymap.set('c', '%%', "<c-r>=expand('%:h').'/'<cr>") -- directory of current
       -- " visual mode
       -- vnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
       -- vnoremap <RightMouse> <nop>|" disable the dang mouse buttons
-
-      -- " command line mode
-      -- cnoremap %% <c-r>=expand('%:h').'/'<cr>|" directory of current file
-      -- cnoremap <C-A> <Home>|" ctrl-a jumps to start of command line
-      -- cnoremap <Left> <Space><BS><Left>|" left key moves cursor in wildmenu
-      -- cnoremap <Right> <Space><BS><Right>|" right key moves cursor in wildmenu
 
       -- " terminal mode
       -- tnoremap <S-Up> <C-\><C-n>:wincmd k<cr>|" move between windows with shift + arrow keys
