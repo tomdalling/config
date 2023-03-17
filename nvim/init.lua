@@ -347,13 +347,25 @@ cmp.setup({
   }),
 })
 
+local on_attach = function(client, bufnr)
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+end
+
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lspconfig = require('lspconfig')
 lspconfig.solargraph.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  on_attach = on_attach,
 }
 lspconfig.tsserver.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  on_attach = on_attach,
 }
 
 --
@@ -371,6 +383,10 @@ vim.keymap.set('n', '<space>', ':nohlsearch<cr>') -- remove search highlighting
 vim.keymap.set('n', '<leader>p', '"*pv`]') -- paste from system clipboard and select
 vim.keymap.set('n', '<leader>P', '"*Pv`]') -- paste from system clipboard
 vim.keymap.set('n', 'q<up>', ':bot copen<cr>') -- open quickfix window
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next) -- jump to next diagnosic
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev) -- jump to previous diagnosic
+vim.keymap.set('n', 'qd', vim.diagnostic.setqflist)
+
 vim.cmd [[
   nnoremap <silent> q<down> :call MyCloseAuxilliaryWindows()<cr>
   nnoremap <silent> <leader>c :set opfunc=MySystemCopyOpfunc<CR>g@|" copy to system clipboard (with movement)
