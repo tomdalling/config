@@ -412,6 +412,10 @@ vim.keymap.set('i', '<LeftMouse>', '<nop>') -- disable the dang mouse buttons
 vim.keymap.set('i', '<RightMouse>', '<nop>') -- disable the dang mouse buttons
 
 --
+-- command line mode
+--
+vim.keymap.set('c', '%%', "<c-r>=expand('%:h').'/'<cr>") -- directory of current file
+--
 -- TODO
 --
       -- " normal mode
