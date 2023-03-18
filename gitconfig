@@ -59,3 +59,5 @@
 	difffilter = diffr
 [diff "rspec"]
   xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
+[init]
+	defaultBranch = main
