@@ -135,6 +135,10 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
 
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = function()
+  vim.cmd('TSUpdate')
+end})
+
 vim.call('plug#end')
 
 --
@@ -285,6 +289,28 @@ vim.cmd [[
     echom "No further files"
   endfunction
 ]]
+
+--
+-- Treesitter
+--
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "lua",
+    "vim",
+    "vimdoc",
+    "query",
+    "svelte",
+    "scss",
+    "css",
+  },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
 
 --
 -- misc crap
