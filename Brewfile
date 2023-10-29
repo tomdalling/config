@@ -14,6 +14,7 @@ brew "fzf"
 brew "git"
 brew "mas"
 brew "neovim"
+brew "node"
 brew "postgresql", restart_service: true
 brew "ripgrep"
 brew "ruby-install"
