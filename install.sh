@@ -8,8 +8,8 @@ fail() {
 }
 
 replace_with_sym() {
-    name="$1"
-    path="$2$1"
+    path="$1"
+    name="$(basename "$1")"
 
     dest="../.$name"
 
@@ -32,13 +32,13 @@ replace_with_sym() {
 cd "$(dirname "$0")"
 [[ "$(pwd)" == "$HOME/config" ]] || fail "Must be installed in $HOME/config"
 
-replace_with_sym bash_profile bash/
-replace_with_sym bashrc bash/
-replace_with_sym inputrc ''
-replace_with_sym gitconfig git/
-replace_with_sym irbrc ruby/
-replace_with_sym gemrc ruby/
-replace_with_sym pryrc ruby/
-replace_with_sym byebugrc ruby/
+replace_with_sym bash/bash_profile
+replace_with_sym bash/bashrc
+replace_with_sym bash/inputrc
+replace_with_sym git/gitconfig
+replace_with_sym ruby/irbrc
+replace_with_sym ruby/gemrc
+replace_with_sym ruby/pryrc
+replace_with_sym ruby/byebugrc 
 
 echo "Done"
