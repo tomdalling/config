@@ -15,6 +15,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1 # don't autoupdate things implicitly
 export HOMEBREW_NO_ANALYTICS=1 # more privacy
 export HOMEBREW_NO_INSECURE_REDIRECT=1 # more security
 export HOMEBREW_CASK_OPTS="--require-sha" # more security
+export HOMEBREW_NO_ENV_HINTS=1
 export LDFLAGS="-L$(brew --prefix openssl@1.1)/lib"
 export CPPFLAGS="-I$(brew --prefix openssl@1.1)/include"
 
