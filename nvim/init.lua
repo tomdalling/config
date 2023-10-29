@@ -74,10 +74,10 @@ Plug 'pbogut/fzf-mru.vim'
 
 Plug 'jremmen/vim-ripgrep'
   vim.g.rg_command = 'rg --vimgrep --smart-case' -- use 'smart case mode' in ripgrep
+  vim.keymap.set('n', '<leader>a', ":call MyGlobalSearch(expand('<cword>'))<cr>") -- search using word under cursor
+  vim.keymap.set('n', '<leader>A', "lB:call MyGlobalSearch(expand('<cWORD>'))<cr>") -- search using FULL word under cursor
+  vim.keymap.set('v', '<leader>a', 'y:call MyGlobalSearch(@")<cr>') -- search using selected text
   vim.cmd [[
-    nnoremap <leader>a :call MyGlobalSearch(expand('<cword>'))<cr>|" search using word under cursor
-    nnoremap <leader>A lB:call MyGlobalSearch(expand('<cWORD>'))<cr>|" search using FULL word under cursor
-    vnoremap <leader>a y:call MyGlobalSearch(@")<cr>|" search using selected text
     function! MyGlobalSearch(text)
       let @/ = a:text
       exec "Rg -F " . shellescape(a:text)
@@ -98,15 +98,13 @@ Plug 'vim-ruby/vim-ruby'
   vim.g.ruby_indent_access_modifier_style = 'indent'
   vim.g.ruby_indent_assignment_style = 'variable'
   vim.g.ruby_indent_hanging_elements = 0
-  vim.cmd [[
-    let ruby_foldable_groups = 'def class module << __END__'
-    let ruby_spellcheck_strings = 1
-    let ruby_space_errors = 1
-    let ruby_operators = 1
-    let ruby_pseudo_operators = 1
-    let ruby_line_continuation_error = 1
-    let ruby_global_variable_error = 1
-  ]]
+  vim.g.ruby_foldable_groups = 'def class module << __END__'
+  vim.g.ruby_spellcheck_strings = 1
+  vim.g.ruby_space_errors = 1
+  vim.g.ruby_operators = 1
+  vim.g.ruby_pseudo_operators = 1
+  vim.g.ruby_line_continuation_error = 1
+  vim.g.ruby_global_variable_error = 1
 
 Plug 'vim-test/vim-test'
   vim.keymap.set('n', '<leader>tt', ':TestLast<cr>')
