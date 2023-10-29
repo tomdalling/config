@@ -11,14 +11,25 @@ vim.g.my_config_root = vim.fn.expand('<sfile>:p:h:h') -- usually ~/config
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-projectionist'
-Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'williamboman/mason.nvim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -121,17 +132,6 @@ Plug 'airblade/vim-gitgutter'
   vim.keymap.set('n', '<leader>hp', '<Plug>(GitGutterPreviewHunk)') --  (h)unk (p)review
   vim.keymap.set('n', '<leader>hs', '<Plug>(GitGutterStageHunk)') --  (h)unk (s)tage
   vim.opt.updatetime = 100 -- milliseconds before updating the gutter (also affects swap file writing)
-
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'slim-template/vim-slim'
-
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'jparise/vim-graphql'
 
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = function()
   vim.cmd('TSUpdate')
@@ -374,6 +374,10 @@ cmp.setup({
   }),
 })
 
+--
+-- lsp config
+--
+
 local on_attach = function(client, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -385,18 +389,17 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-local lspconfig = require('lspconfig')
-lspconfig.solargraph.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-lspconfig.tsserver.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-lspconfig.svelte.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
+
+-- order of requires is important
+require("mason").setup()
+require("mason-lspconfig").setup{}
+require("mason-lspconfig").setup_handlers {
+  function (server_name)
+    require("lspconfig")[server_name].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
+  end,
 }
 
 --
