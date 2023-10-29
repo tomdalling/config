@@ -1,5 +1,6 @@
 CONFIG_BASE="$HOME/config"
-source "$CONFIG_BASE/_lib/bash_common.sh"
+BASH_BASE="$CONFIG_BASE/bash"
+source "$BASH_BASE/lib/bash_common.sh"
 
 # environment vars
 export EDITOR='nvim'
@@ -48,20 +49,19 @@ alias zettel='memex run zettel'
 alias wiki='memex run wiki'
 alias todo='memex run --no-mount todo'
 alias ref='memex run ref'
-alias vimrc='vim -O ~/config/nvim/init.vim'
 alias psuhd='pushd' # why can't I type?
 alias psudh='pushd' # why can't I type?
 alias pusdh='pushd' # why can't I type?
 
 # plugin-type things (only if in a tty)
 if [ -t 1 ] ; then
-  source "$CONFIG_BASE/_lib/brew_bash_completion.sh"
-  source "$CONFIG_BASE/_lib/git_ps1.sh"
-  source "$CONFIG_BASE/_lib/starship.sh"
+  source "$BASH_BASE/lib/brew_bash_completion.sh"
+  source "$BASH_BASE/lib/git_ps1.sh"
+  source "$BASH_BASE/lib/starship.sh"
 fi
 
 # needs to come after starship or it doesn't work properly
-source "$CONFIG_BASE/_lib/chruby.sh"
+source "$BASH_BASE/lib/chruby.sh"
 
 source_if_exists "$HOME/.bashrc.local"
 source_if_exists "$HOME/.fzf.bash" # fzf dumps config here on install

@@ -34,8 +34,8 @@
             git reset --soft HEAD~ ; \
         fi"
 [core]
-    excludesfile = ~/config/gitignore_global
-    attributesfile = ~/config/gitattributes_global
+    excludesfile = ~/config/git/gitignore_global
+    attributesfile = ~/config/git/gitattributes_global
     pager = diffr | less --RAW-CONTROL-CHARS --chop-long-lines
 [color]
     ui = true
