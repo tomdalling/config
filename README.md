@@ -12,3 +12,8 @@ Neovim plugins:
 
     nvim
     :PlugInstall
+
+New language servers:
+
+    nvim whatever_source_code_file.rb
+    :LspInstall
