@@ -1,15 +1,33 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-# From: https://github.com/thisredone/rb
+# Adapted from: https://github.com/thisredone/rb
 
-File.join(Dir.home, '.rbrc').tap { |f| load f if File.exists?(f) }
+if ARGV.empty?
+  puts <<~'TXT'
+    EXAMPLE USAGE:
 
-def execute(_, code)
-  puts _.instance_eval(&code)
-rescue Errno::EPIPE
-  exit
+      # `self` is entire input, no `puts` by default
+      cat whatever.csv | rb 'puts lines.size'
+
+      # Per-line mode. Basically: $stdin.each_line { puts line.instance_eval(ARGV) }
+      cat whatever.csv | rb -l 'split(",").join("\t")' > whatever.tsv
+  TXT
+  return
 end
 
-single_line = ARGV.delete('-l')
+File.join(Dir.home, '.rbrc').tap { |f| load f if File.exist?(f) }
+
+def execute(itself, code)
+  itself.instance_eval(&code)
+rescue Errno::EPIPE
+  abort
+end
+
+per_line_mode = (ARGV.first == '-l' ? !!ARGV.shift : false)
 code = eval("Proc.new { #{ARGV.join(' ')} }")
-single_line ? STDIN.each { |l| execute(l.chomp, code) } : execute(STDIN.each_line, code)
+if per_line_mode
+  $stdin.each_line { |l| puts execute(l.chomp, code) }
+else
+  execute($stdin.read, code)
+end
