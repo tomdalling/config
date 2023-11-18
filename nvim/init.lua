@@ -443,6 +443,19 @@ vim.cmd [[
   nnoremap <silent> <leader>x :set opfunc=MySystemCutOpfunc<CR>g@|" cut to system clipboard (with movement)
 ]]
 
+-- fix <s-up> and <s-down> in netrw
+vim.cmd [[
+  augroup MyNetrwMaps
+    autocmd!
+    autocmd filetype netrw call ApplyNetrwMaps()
+  augroup END
+
+  function ApplyNetrwMaps()
+    nnoremap <buffer> <s-up> :wincmd k<cr>
+    nnoremap <buffer> <s-down> :wincmd j<cr>
+  endfunction
+]]
+
 --
 -- visual mode
 --
