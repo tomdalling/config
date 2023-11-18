@@ -456,6 +456,12 @@ vim.cmd [[
   endfunction
 ]]
 
+vim.cmd [[
+  " these are mapped to <c-s-o> and <c-s-i> via iTerm2
+  nnoremap <F18> :call MyLeap(0)<cr>| " <c-o> back to previous file
+  nnoremap <F19> :call MyLeap(1)<cr>| " <c-i> forward to next file
+]]
+
 --
 -- visual mode
 --
@@ -488,10 +494,6 @@ vim.keymap.set('c', '<C-A>', '<Home>') -- ctrl-a jumps to start of command line
       -- nnoremap <LeftMouse> <nop>|" disable the dang mouse buttons
       -- nnoremap <RightMouse> <nop>|" disable the dang mouse buttons
       -- nnoremap <silent> <cr> :call MyEnterKey()<cr>| " enter key does context-specific stuff
-
-      -- " these are mapped to <c-s-o> and <c-s-i> via iTerm2
-      -- nnoremap <F18> :call MyLeap(0)<cr>| " <c-o> back to previous file
-      -- nnoremap <F19> :call MyLeap(1)<cr>| " <c-i> forward to next file
 
 
       -- " visual mode
