@@ -325,6 +325,9 @@ vim.cmd [[
 
   " don't keep netrw buffers around
   autocmd FileType netrw setl bufhidden=hide
+
+  " do proper syntax highlighting at all times (may be slow)
+  autocmd BufEnter * :syntax sync fromstart
 ]]
 
 
