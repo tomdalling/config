@@ -322,10 +322,11 @@ vim.cmd [[
       autocmd BufEnter,FocusGained,WinEnter,VimResume * checktime
     endif
   augroup END
+
+  " don't keep netrw buffers around
+  autocmd FileType netrw setl bufhidden=hide
 ]]
 
--- don't keep netrw buffers around
-vim.cmd [[ autocmd FileType netrw setl bufhidden=hide ]]
 
 -- load vimrc files (from within .git/ dirs, for added safety)
 if vim.fn.filereadable('.git/vimrc') ~= 0 then
