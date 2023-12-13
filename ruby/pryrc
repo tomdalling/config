@@ -8,3 +8,11 @@ end
 Pry::Commands.command /^$/, "repeat last command" do
   _pry_.run_command Pry.history.to_a.last
 end
+
+# makes Gimme smaller, and fit into a Vim split
+begin
+  require 'cli/ui'
+  CLI::UI::Terminal.send(:remove_const, :DEFAULT_HEIGHT)
+  CLI::UI::Terminal.const_set(:DEFAULT_HEIGHT, 15)
+rescue LoadError
+end
