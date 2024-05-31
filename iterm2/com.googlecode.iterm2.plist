@@ -340,6 +340,8 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>IRMemory</key>
+	<integer>4</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -641,7 +643,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>exec $(brew --prefix)/bin/bash</string>
+			<string>exec $(brew --prefix)/bin/bash --login</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
