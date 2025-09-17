@@ -28,8 +28,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'williamboman/mason.nvim'
+Plug 'mason-org/mason-lspconfig.nvim'
+Plug 'mason-org/mason.nvim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -411,15 +411,24 @@ local on_attach = function(client, bufnr)
 end
 
 -- order of requires is important
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        globals = {
+          'vim',
+          'require',
+        },
+      },
+    },
+  },
+})
 require("mason").setup()
-require("mason-lspconfig").setup{}
-require("mason-lspconfig").setup_handlers {
-  function (server_name)
-    require("lspconfig")[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    }
-  end,
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls" }
 }
 
 --
