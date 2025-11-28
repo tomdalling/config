@@ -6,6 +6,32 @@ vim.g.maplocalleader = ','
 vim.g.my_config_root = vim.fn.expand('<sfile>:p:h:h') -- usually ~/config
 
 --
+-- Install vim-plug if it doesn't exist yet
+--
+local data_dir = vim.fn.stdpath('data') .. '/site'
+local plug_path = data_dir .. '/autoload/plug.vim'
+
+if vim.fn.empty(vim.fn.glob(plug_path)) == 1 then
+  vim.fn.system({
+    'curl',
+    '-fLo',
+    plug_path,
+    '--create-dirs',
+    'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  })
+
+  -- Autocommand to install plugins on launch
+  vim.api.nvim_create_autocmd('VimEnter', {
+    pattern = '*',
+    group = vim.api.nvim_create_augroup('PlugBootstrap', { clear = true }),
+    callback = function()
+      vim.cmd('PlugInstall --sync')
+      vim.cmd('source $MYVIMRC')
+    end
+  })
+end
+
+--
 -- plugins
 --
 local Plug = vim.fn['plug#']
