@@ -41,4 +41,10 @@ replace_with_sym ruby/gemrc
 replace_with_sym ruby/pryrc
 replace_with_sym ruby/byebugrc 
 
+echo "Installing stuff from Brewfile..."
+brew bundle
+
 echo "Done"
+echo
+echo "If this is a new machine, you probably want to install Neovim plugins now:"
+echo "    nvim +'PlugInstall --sync'"
