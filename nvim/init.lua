@@ -159,7 +159,7 @@ Plug 'airblade/vim-gitgutter'
   vim.keymap.set('n', '<leader>hs', '<Plug>(GitGutterStageHunk)') --  (h)unk (s)tage
   vim.opt.updatetime = 100 -- milliseconds before updating the gutter (also affects swap file writing)
 
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = function()
+Plug('nvim-treesitter/nvim-treesitter', { ['branch'] = 'master', ['do'] = function()
   vim.cmd('TSUpdate')
 end})
 
@@ -323,10 +323,6 @@ require'nvim-treesitter.configs'.setup {
     "lua",
     "vim",
     "vimdoc",
-    "query",
-    "svelte",
-    "scss",
-    "css",
   },
   sync_install = false,
   auto_install = true,
